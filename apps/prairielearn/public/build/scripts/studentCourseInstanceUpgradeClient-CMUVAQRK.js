@@ -1,0 +1,2 @@
+"use strict";(()=>{function t(e){document.readyState==="interactive"||document.readyState==="complete"?e():document.addEventListener("DOMContentLoaded",()=>{e()})}t(()=>{let e=document.querySelector("#js-terms-agreement"),o=document.querySelector("#js-upgrade");!e||!o||e.addEventListener("change",()=>{o.disabled=!e.checked})});})();
+//# sourceMappingURL=studentCourseInstanceUpgradeClient-CMUVAQRK.js.map

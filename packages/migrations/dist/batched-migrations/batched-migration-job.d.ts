@@ -1,0 +1,42 @@
+import { z } from 'zod';
+export declare const BatchedMigrationJobStatusSchema: z.ZodEnum<["pending", "failed", "succeeded"]>;
+export type BatchedMigrationJobStatus = z.infer<typeof BatchedMigrationJobStatusSchema>;
+export declare const BatchedMigrationJobRowSchema: z.ZodObject<{
+    id: z.ZodString;
+    batched_migration_id: z.ZodString;
+    min_value: z.ZodBigInt;
+    max_value: z.ZodBigInt;
+    status: z.ZodEnum<["pending", "failed", "succeeded"]>;
+    attempts: z.ZodNumber;
+    created_at: z.ZodDate;
+    updated_at: z.ZodDate;
+    started_at: z.ZodNullable<z.ZodDate>;
+    finished_at: z.ZodNullable<z.ZodDate>;
+    data: z.ZodUnknown;
+}, "strip", z.ZodTypeAny, {
+    status: "pending" | "failed" | "succeeded";
+    id: string;
+    min_value: bigint;
+    max_value: bigint;
+    created_at: Date;
+    updated_at: Date;
+    started_at: Date | null;
+    batched_migration_id: string;
+    attempts: number;
+    finished_at: Date | null;
+    data?: unknown;
+}, {
+    status: "pending" | "failed" | "succeeded";
+    id: string;
+    min_value: bigint;
+    max_value: bigint;
+    created_at: Date;
+    updated_at: Date;
+    started_at: Date | null;
+    batched_migration_id: string;
+    attempts: number;
+    finished_at: Date | null;
+    data?: unknown;
+}>;
+export type BatchedMigrationJobRow = z.infer<typeof BatchedMigrationJobRowSchema>;
+export declare function selectRecentJobsWithStatus(batchedMigrationId: string, status: BatchedMigrationJobStatus, limit: number): Promise<BatchedMigrationJobRow[]>;

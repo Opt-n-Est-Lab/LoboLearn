@@ -1,0 +1,825 @@
+.
+├── apps
+│   ├── grader-host
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── prairielearn
+│   │   ├── assets
+│   │   ├── elements
+│   │   ├── package.json
+│   │   ├── public
+│   │   ├── python
+│   │   ├── README.md
+│   │   ├── server.log
+│   │   ├── src
+│   │   ├── tsconfig.json
+│   │   └── v2-question-servers
+│   ├── README.md
+│   └── workspace-host
+│       ├── package.json
+│       ├── src
+│       └── tsconfig.json
+├── CODEOWNERS
+├── contrib
+│   ├── api_download.py
+│   ├── assess-convert.py
+│   ├── dump-anonymize.mjs
+│   ├── dump_filter.sh
+│   ├── dump_restore.sh
+│   ├── generate_submissions.py
+│   ├── generate_tags_and_topics.py
+│   ├── generate_text.py
+│   ├── generate_uuids.py
+│   ├── question-container-debugging.sh
+│   ├── question_converters
+│   │   ├── canvas
+│   │   ├── lon-capa
+│   │   ├── randexam
+│   │   ├── README.md
+│   │   └── smart-physics
+│   ├── README.md
+│   ├── reassign_questions_to_subdirs.py
+│   ├── run-question-in-container.sh
+│   ├── snapshot-question-html.mjs
+│   ├── start_workspace_tmux.sh
+│   ├── tsconfig.json
+│   └── verify_course_repo.mjs
+├── CONTRIBUTING.md
+├── database
+│   ├── enums
+│   │   ├── enum_ai_question_generation_prompt_type.pg
+│   │   ├── enum_assessment_grouping.pg
+│   │   ├── enum_assessment_type.pg
+│   │   ├── enum_auth_action.pg
+│   │   ├── enum_batched_migration_job_status.pg
+│   │   ├── enum_batched_migration_status.pg
+│   │   ├── enum_chunk_type.pg
+│   │   ├── enum_course_instance_role.pg
+│   │   ├── enum_course_instance_usages_type.pg
+│   │   ├── enum_course_request_status.pg
+│   │   ├── enum_course_role.pg
+│   │   ├── enum_exam_type.pg
+│   │   ├── enum_file_storage_type.pg
+│   │   ├── enum_grading_method.pg
+│   │   ├── enum_instance_question_status.pg
+│   │   ├── enum_job_status.pg
+│   │   ├── enum_mode.pg
+│   │   ├── enum_mode_reason.pg
+│   │   ├── enum_plan_grant_type.pg
+│   │   ├── enum_question_type.pg
+│   │   ├── enum_transfer_type.pg
+│   │   ├── enum_workspace_host_state.pg
+│   │   ├── enum_workspace_state.pg
+│   │   └── feature_grant_type.pg
+│   ├── README.md
+│   └── tables
+│       ├── access_logs.pg
+│       ├── access_tokens.pg
+│       ├── administrators.pg
+│       ├── ai_grading_jobs.pg
+│       ├── ai_question_generation_prompts.pg
+│       ├── alternative_groups.pg
+│       ├── assessment_access_rules.pg
+│       ├── assessment_instances.pg
+│       ├── assessment_modules.pg
+│       ├── assessment_question_role_permissions.pg
+│       ├── assessment_questions.pg
+│       ├── assessment_score_logs.pg
+│       ├── assessment_sets.pg
+│       ├── assessments.pg
+│       ├── assessment_state_logs.pg
+│       ├── audit_logs.pg
+│       ├── authn_providers.pg
+│       ├── batched_migration_jobs.pg
+│       ├── batched_migrations.pg
+│       ├── chunks.pg
+│       ├── client_fingerprints.pg
+│       ├── course_instance_access_rules.pg
+│       ├── course_instance_permissions.pg
+│       ├── course_instance_required_plans.pg
+│       ├── course_instances.pg
+│       ├── course_instance_usages.pg
+│       ├── course_permissions.pg
+│       ├── course_requests.pg
+│       ├── courses.pg
+│       ├── cron_jobs.pg
+│       ├── current_pages.pg
+│       ├── draft_question_metadata.pg
+│       ├── enrollments.pg
+│       ├── exam_mode_networks.pg
+│       ├── exams.pg
+│       ├── feature_grants.pg
+│       ├── file_edits.pg
+│       ├── files.pg
+│       ├── file_transfers.pg
+│       ├── grader_loads.pg
+│       ├── grading_jobs.pg
+│       ├── group_configs.pg
+│       ├── group_logs.pg
+│       ├── group_roles.pg
+│       ├── groups.pg
+│       ├── group_user_roles.pg
+│       ├── group_users.pg
+│       ├── instance_questions.pg
+│       ├── institution_administrators.pg
+│       ├── institution_authn_providers.pg
+│       ├── institutions.pg
+│       ├── issues.pg
+│       ├── job_sequences.pg
+│       ├── jobs.pg
+│       ├── last_accesses.pg
+│       ├── lti13_assessments.pg
+│       ├── lti13_course_instances.pg
+│       ├── lti13_instances.pg
+│       ├── lti13_users.pg
+│       ├── lti_credentials.pg
+│       ├── lti_links.pg
+│       ├── lti_outcomes.pg
+│       ├── migrations.pg
+│       ├── named_locks.pg
+│       ├── news_item_notifications.pg
+│       ├── news_items.pg
+│       ├── page_view_logs.pg
+│       ├── plan_grants.pg
+│       ├── pl_courses.pg
+│       ├── pt_courses.pg
+│       ├── pt_enrollments.pg
+│       ├── pt_exams.pg
+│       ├── pt_location_networks.pg
+│       ├── pt_locations.pg
+│       ├── pt_reservations.pg
+│       ├── pt_sessions.pg
+│       ├── query_runs.pg
+│       ├── question_generation_context_embeddings.pg
+│       ├── question_score_logs.pg
+│       ├── questions.pg
+│       ├── question_tags.pg
+│       ├── reservations.pg
+│       ├── rubric_grading_items.pg
+│       ├── rubric_gradings.pg
+│       ├── rubric_items.pg
+│       ├── rubrics.pg
+│       ├── saml_providers.pg
+│       ├── server_loads.pg
+│       ├── sharing_set_courses.pg
+│       ├── sharing_set_questions.pg
+│       ├── sharing_sets.pg
+│       ├── stripe_checkout_sessions.pg
+│       ├── submission_grading_context_embeddings.pg
+│       ├── submissions.pg
+│       ├── tags.pg
+│       ├── time_series.pg
+│       ├── topics.pg
+│       ├── user_sessions.pg
+│       ├── users.pg
+│       ├── variants.pg
+│       ├── variant_view_logs.pg
+│       ├── workspace_host_logs.pg
+│       ├── workspace_hosts.pg
+│       ├── workspace_logs.pg
+│       ├── workspaces.pg
+│       └── zones.pg
+├── docker-compose-production.yml
+├── docker-compose.yml
+├── Dockerfile
+├── docs
+│   ├── accessControl
+│   │   ├── exam_timer.svg
+│   │   ├── index.md
+│   │   └── role_picker.png
+│   ├── api.md
+│   ├── assessment
+│   │   ├── assessment-grading-disabled-closed.png
+│   │   ├── assessment-grading-disabled-open.png
+│   │   ├── assessment-grading-normal.png
+│   │   ├── assessment-report1.png
+│   │   ├── assessment-report2.png
+│   │   ├── assessment-report3.png
+│   │   ├── grouproles_assign_roles.png
+│   │   ├── grouproles_groupinfo.png
+│   │   ├── grouproles_invalid_config_errors.png
+│   │   ├── grouproles_join.png
+│   │   ├── grouproles_submit_question.png
+│   │   ├── grouproles_view_question.png
+│   │   ├── groupwork_student_perspective_assessment.png
+│   │   ├── groupwork_student_perspective_join.png
+│   │   └── index.md
+│   ├── assets
+│   │   ├── extra.css
+│   │   ├── flower-square-1024.png
+│   │   ├── flower-square-256.png
+│   │   ├── flower-square-64.png
+│   │   ├── flower-square-nobg.svg
+│   │   ├── flower-square.svg
+│   │   ├── mathjax-config.js
+│   │   ├── PL-logo-adaptive.svg
+│   │   ├── PL-logo-black.svg
+│   │   ├── PL-logo.svg
+│   │   └── PL-logo-white.svg
+│   ├── c-grader
+│   │   └── index.md
+│   ├── clientServerFiles.md
+│   ├── codeExecution.md
+│   ├── concepts
+│   │   ├── concept-map-example.d2
+│   │   ├── hw-assessment.png
+│   │   ├── hw-question.png
+│   │   ├── index.md
+│   │   ├── module-grouping.png
+│   │   ├── set-grouping.png
+│   │   └── workspace.png
+│   ├── configJson.md
+│   ├── contributing.md
+│   ├── course
+│   │   ├── assessment-units.png
+│   │   ├── colors.html
+│   │   └── index.md
+│   ├── courseInstance.md
+│   ├── devElements.md
+│   ├── developer-guide
+│   │   └── index.md
+│   ├── dev-guide
+│   │   ├── high-level.d2
+│   │   ├── index.md
+│   │   ├── models.d2
+│   │   ├── question-flow.d2
+│   │   └── simplified-models.d2
+│   ├── elementExtensions.md
+│   ├── elements
+│   │   ├── pl-checkbox.png
+│   │   ├── pl-code.png
+│   │   ├── pl-dropdown.png
+│   │   ├── pl-excalidraw.png
+│   │   ├── pl-external-grader-variables.png
+│   │   ├── pl-figure.png
+│   │   ├── pl-file-download.png
+│   │   ├── pl-file-editor.png
+│   │   ├── pl-file-upload.png
+│   │   ├── pl-graph1.png
+│   │   ├── pl-graph2.png
+│   │   ├── pl-integer-input.png
+│   │   ├── pl-matching.png
+│   │   ├── pl-matrix-component-input.png
+│   │   ├── pl-matrix-input.png
+│   │   ├── pl-matrix-latex.png
+│   │   ├── pl-multiple-choice.png
+│   │   ├── pl-number-input-rtol.png
+│   │   ├── pl-number-input-sigfig.png
+│   │   ├── pl-order-blocks.png
+│   │   ├── pl-overlay.png
+│   │   ├── pl-python-variable.png
+│   │   ├── pl-rich-text-editor.png
+│   │   ├── pl-string-input.png
+│   │   ├── pl-symbolic-input.png
+│   │   ├── pl-threejs.png
+│   │   └── pl-variable-output.png
+│   ├── elements.md
+│   ├── externalGrading.md
+│   ├── faq.md
+│   ├── getStarted.md
+│   ├── getting-started
+│   │   └── index.md
+│   ├── index.md
+│   ├── installingLocal.md
+│   ├── installing.md
+│   ├── installingNative.md
+│   ├── instructor-guide
+│   │   └── index.md
+│   ├── java-grader
+│   │   └── index.md
+│   ├── lmsIntegrationInstructor.md
+│   ├── lti13.md
+│   ├── manualGrading
+│   │   ├── grading_panel_with_rubrics.png
+│   │   ├── index.md
+│   │   ├── manualGradingFeedback.png
+│   │   ├── rubric_button.png
+│   │   ├── rubric_items_setting.png
+│   │   ├── rubric_settings.png
+│   │   └── student_feedback_with_rubrics.png
+│   ├── mkdocstrings
+│   │   └── python
+│   ├── oldQuestion.md
+│   ├── overrides
+│   │   └── partials
+│   ├── pl-drawing
+│   │   ├── index.md
+│   │   ├── pl-3pointrod.png
+│   │   ├── pl-4pointrod.png
+│   │   ├── pl-all-buttons.png
+│   │   ├── pl-arc-dimensions.png
+│   │   ├── pl-arc.png
+│   │   ├── pl-arc-vector.png
+│   │   ├── pl-battery.png
+│   │   ├── pl-capacitor.png
+│   │   ├── pl-circle.png
+│   │   ├── pl-clamped.png
+│   │   ├── pl-coil.png
+│   │   ├── pl-collar.png
+│   │   ├── pl-controlled-curved-line.png
+│   │   ├── pl-controlled-line.png
+│   │   ├── pl-coordinates.png
+│   │   ├── pl-dimensions.png
+│   │   ├── pl-distributed-load.png
+│   │   ├── pl-double-headed-vector.png
+│   │   ├── pl-drawing.png
+│   │   ├── pl-fixed-pin.png
+│   │   ├── pl-graph.png
+│   │   ├── pl-inductor.png
+│   │   ├── pl-I.png
+│   │   ├── pl-line.png
+│   │   ├── pl-origin-canvas.png
+│   │   ├── pl-paired-vector.png
+│   │   ├── pl-point-error-box.png
+│   │   ├── pl-point.png
+│   │   ├── pl-polygon.png
+│   │   ├── pl-pulley.png
+│   │   ├── pl-rectangle.png
+│   │   ├── pl-resistor.png
+│   │   ├── pl-rod.png
+│   │   ├── pl-roller.png
+│   │   ├── pl-spring.png
+│   │   ├── pl-springs.png
+│   │   ├── pl-switch.png
+│   │   ├── pl-text.png
+│   │   ├── pl-triangle.png
+│   │   ├── pl-vector-correct-answer.png
+│   │   ├── pl-vector-error-box.png
+│   │   ├── pl-vector-error-box-zoom.png
+│   │   ├── pl-vector-grading-canvas-example.png
+│   │   └── pl-vector.png
+│   ├── PrairieDraw.md
+│   ├── python-grader
+│   │   ├── index.md
+│   │   └── reference-docs.md
+│   ├── python-reference
+│   │   └── index.md
+│   ├── question.md
+│   ├── questionRuntime
+│   │   ├── edit_btn.png
+│   │   ├── index.md
+│   │   └── scipy_version.png
+│   ├── questionSharing.md
+│   ├── regrading.md
+│   ├── remoteExams.md
+│   ├── requestCourse
+│   │   ├── index.md
+│   │   ├── requestCourseButton.png
+│   │   └── requestCourseDropdown.png
+│   ├── requirements.txt
+│   ├── running-in-production
+│   │   ├── admin-user.md
+│   │   ├── authentication.md
+│   │   ├── docker-compose.md
+│   │   └── setup.md
+│   ├── saml.md
+│   ├── scripts
+│   │   ├── d2_svg_file.py
+│   │   ├── gen_additional_readmes.py
+│   │   ├── gen_jsonschemas.py
+│   │   ├── gen_python_nav.py
+│   │   └── jsonschema_details_fix.py
+│   ├── start-guide
+│   │   ├── change-example-course.png
+│   │   ├── create_assessment.png
+│   │   ├── homepage_new_instance.png
+│   │   ├── homepage.png
+│   │   ├── question_add_new_1.png
+│   │   └── question_tab.png
+│   ├── student-guide
+│   │   └── accessibility.md
+│   ├── sync.md
+│   ├── uuid.md
+│   ├── whatToTellStudents.md
+│   ├── workshop
+│   │   ├── figs
+│   │   ├── index.md
+│   │   ├── lesson1.md
+│   │   ├── lesson2.md
+│   │   ├── lesson3.md
+│   │   ├── lesson4.md
+│   │   └── lesson5.md
+│   └── workspaces
+│       └── index.md
+├── exampleCourse
+│   ├── clientFilesCourse
+│   │   ├── data.txt
+│   │   ├── formulas.pdf
+│   │   ├── sharedElementCode.js
+│   │   └── sharedElementStyles.css
+│   ├── courseInstances
+│   │   └── SectionA
+│   ├── elementExtensions
+│   │   ├── extendable-element
+│   │   ├── pl-drawing
+│   │   └── pl-graph
+│   ├── elements
+│   │   ├── clickable-image
+│   │   ├── course-element
+│   │   └── extendable-element
+│   ├── infoCourse.json
+│   ├── questions
+│   │   ├── demo
+│   │   ├── element
+│   │   ├── gallery
+│   │   ├── template
+│   │   └── workshop
+│   ├── README.md
+│   └── serverFilesCourse
+│       ├── templates
+│       └── workspace_file.txt
+├── flet_framework
+│   ├── app_screenshot.png
+│   ├── assets
+│   │   └── images
+│   ├── commands.txt
+│   ├── docs
+│   │   ├── app.tar.gz
+│   │   ├── assets
+│   │   ├── favicon.png
+│   │   ├── flutter_bootstrap.js
+│   │   ├── flutter.js
+│   │   ├── flutter_service_worker.js
+│   │   ├── icons
+│   │   ├── index.html
+│   │   ├── main.dart.js
+│   │   ├── manifest.json
+│   │   ├── python.js
+│   │   ├── python-worker.js
+│   │   └── version.json
+│   └── main.py
+├── graders
+│   ├── c
+│   │   ├── cgrader
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   └── requirements.txt
+│   ├── java
+│   │   ├── AutograderInfo.java
+│   │   ├── autograder.sh
+│   │   ├── Dockerfile
+│   │   ├── JUnitAutograder.java
+│   │   ├── libs
+│   │   └── README.md
+│   ├── python
+│   │   ├── Dockerfile
+│   │   ├── python_autograder
+│   │   ├── README.md
+│   │   └── requirements.txt
+│   ├── r
+│   │   ├── Dockerfile
+│   │   ├── plr
+│   │   ├── r_autograder
+│   │   └── README.md
+│   └── README.md
+├── images
+│   ├── executor
+│   │   ├── Dockerfile
+│   │   └── README.md
+│   └── plbase
+│       ├── Dockerfile
+│       ├── plbase-install.sh
+│       └── python-requirements.txt
+├── index.html
+├── LICENSE
+├── Makefile
+├── mkdocs.yml
+├── package.json
+├── packages
+│   ├── actions-report-image-sizes
+│   │   ├── action.yaml
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── aws
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── aws-imds
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── bind-mount
+│   │   ├── addon.cc
+│   │   ├── binding.gyp
+│   │   ├── build
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── browser-utils
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── cache
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── compiled-assets
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── config
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── csv
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── docker-utils
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── error
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── eslint-plugin-prairielearn
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── express-list-endpoints
+│   │   ├── CHANGELOG.md
+│   │   ├── LICENSE
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── express-test-utils
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── flash
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── formatter
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── html
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── html-ejs
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── logger
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── markdown
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── migrations
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── schema-migrations
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── named-locks
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── node-metrics
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── opentelemetry
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── path-utils
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── postgres
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── postgres-tools
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── prettier-plugin-sql
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── run
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── sanitize
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── sentry
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── session
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── signed-token
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── tsconfig
+│   │   ├── package.json
+│   │   ├── tsconfig.app.json
+│   │   ├── tsconfig.base.json
+│   │   ├── tsconfig.package-cjs.json
+│   │   └── tsconfig.package.json
+│   ├── workspace-utils
+│   │   ├── CHANGELOG.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   └── tsconfig.json
+│   └── zod
+│       ├── CHANGELOG.md
+│       ├── package.json
+│       ├── README.md
+│       ├── src
+│       └── tsconfig.json
+├── project_structure.txt
+├── pyproject.toml
+├── README.md
+├── rebrand_lobolearn.sh
+├── s3rver
+│   ├── chunks
+│   ├── file-store
+│   ├── workspace-logs
+│   └── workspaces
+├── script.js
+├── scripts
+│   ├── build_images
+│   │   ├── build_multiplatform.py
+│   │   ├── build.py
+│   │   ├── combine.py
+│   │   └── utils.py
+│   ├── check_path_modified.sh
+│   ├── copy_docker_coverage_reports.sh
+│   ├── fix-workspace-versions-before-publish.mjs
+│   ├── gen-jsonschema.mts
+│   ├── gen_ssl.sh
+│   ├── init.sh
+│   ├── README.md
+│   ├── start_postgres.sh
+│   ├── start_redis.sh
+│   ├── start_s3rver.sh
+│   ├── tsconfig.json
+│   └── validate-links.mjs
+├── SECURITY.md
+├── style.css
+├── templateCourse
+│   ├── infoCourse.json
+│   └── README.md
+├── testCourse
+│   ├── clientFilesCourse
+│   │   ├── data.txt
+│   │   ├── sharedElementCode.js
+│   │   └── sharedElementStyles.css
+│   ├── courseInstances
+│   │   └── Sp15
+│   ├── elements
+│   │   └── course-element
+│   ├── infoCourse.json
+│   ├── questions
+│   │   ├── addNumbers
+│   │   ├── addVectors
+│   │   ├── aiGradingRubrics
+│   │   ├── brokenGeneration
+│   │   ├── brokenGrading
+│   │   ├── brokenPrepare
+│   │   ├── brokenSubmission
+│   │   ├── customElement
+│   │   ├── demo
+│   │   ├── differentiatePolynomial
+│   │   ├── downloadFile
+│   │   ├── externalGrade
+│   │   ├── fossilFuelsRadio
+│   │   ├── internalGrade
+│   │   ├── manualGrade
+│   │   ├── orderBlocks
+│   │   ├── partialCredit1
+│   │   ├── partialCredit2
+│   │   ├── partialCredit3
+│   │   ├── partialCredit4_v2
+│   │   ├── partialCredit5_v2_partial
+│   │   ├── partialCredit6_no_partial
+│   │   ├── positionTimeGraph
+│   │   ├── prairieDrawFigure
+│   │   ├── subfolder
+│   │   ├── threeJS
+│   │   ├── v2checkbox
+│   │   ├── variantAccess
+│   │   ├── workspace
+│   │   └── workspaceInvalidDynamicFiles
+│   ├── README.md
+│   └── serverFilesCourse
+│       └── workspace_file.txt
+├── turbo.json
+├── unm_logo_horizontal.png
+├── useful_commands.txt
+├── workspaces
+│   ├── desktop
+│   │   ├── code.desktop
+│   │   ├── config
+│   │   ├── Dockerfile
+│   │   ├── local
+│   │   ├── pl-gosu-helper.sh
+│   │   ├── post-install.sh
+│   │   ├── pre-install.sh
+│   │   ├── README.md
+│   │   ├── server
+│   │   └── start-vnc.sh
+│   ├── jupyterlab-python
+│   │   ├── Dockerfile
+│   │   ├── install.sh
+│   │   ├── jupyter_server_config.py
+│   │   ├── pl-gosu-helper.sh
+│   │   ├── README.md
+│   │   └── requirements.txt
+│   ├── README.md
+│   ├── rstudio
+│   │   ├── Dockerfile
+│   │   ├── pl-gosu-helper.sh
+│   │   ├── pl-start.sh
+│   │   └── rstudio-nginx.conf
+│   ├── vscode-base
+│   │   ├── Dockerfile
+│   │   ├── pl-gosu-helper.sh
+│   │   ├── README.md
+│   │   └── settings.json
+│   ├── vscode-cpp
+│   │   ├── Dockerfile
+│   │   └── README.md
+│   ├── vscode-java
+│   │   ├── Dockerfile
+│   │   └── README.md
+│   ├── vscode-python
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   └── requirements.txt
+│   └── xtermjs
+│       ├── Dockerfile
+│       ├── README.md
+│       └── src
+└── yarn.lock
+
+224 directories, 599 files

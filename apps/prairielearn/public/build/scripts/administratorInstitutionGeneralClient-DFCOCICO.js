@@ -1,0 +1,2 @@
+"use strict";(()=>{function o(e){document.readyState==="interactive"||document.readyState==="complete"?e():document.addEventListener("DOMContentLoaded",()=>{e()})}o(()=>{document.querySelectorAll(".js-plan").forEach(e=>{let t=e.querySelector(".js-plan-enabled"),r=e.querySelector(".js-plan-type");!t||!r||t.addEventListener("change",()=>{r.disabled=!t.checked})})});})();
+//# sourceMappingURL=administratorInstitutionGeneralClient-DFCOCICO.js.map

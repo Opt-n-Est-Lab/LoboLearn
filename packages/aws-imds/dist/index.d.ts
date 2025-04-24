@@ -1,0 +1,41 @@
+import { z } from 'zod';
+declare const InstanceIdentitySchema: z.ZodObject<{
+    availabilityZone: z.ZodString;
+    privateIp: z.ZodString;
+    version: z.ZodString;
+    instanceId: z.ZodString;
+    instanceType: z.ZodString;
+    accountId: z.ZodString;
+    imageId: z.ZodString;
+    pendingTime: z.ZodString;
+    architecture: z.ZodString;
+    region: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    availabilityZone: string;
+    privateIp: string;
+    version: string;
+    instanceId: string;
+    instanceType: string;
+    accountId: string;
+    imageId: string;
+    pendingTime: string;
+    architecture: string;
+    region: string;
+}, {
+    availabilityZone: string;
+    privateIp: string;
+    version: string;
+    instanceId: string;
+    instanceType: string;
+    accountId: string;
+    imageId: string;
+    pendingTime: string;
+    architecture: string;
+    region: string;
+}>;
+type InstanceIdentity = z.infer<typeof InstanceIdentitySchema>;
+export declare function fetchImdsText(path: string): Promise<string>;
+export declare function fetchImdsJson(path: string): Promise<unknown>;
+export declare function fetchInstanceHostname(): Promise<string>;
+export declare function fetchInstanceIdentity(): Promise<InstanceIdentity>;
+export {};

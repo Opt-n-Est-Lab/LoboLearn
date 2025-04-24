@@ -1,0 +1,1 @@
+{"version":3,"file":"instructorAssessments.types.js","sourceRoot":"","sources":["../../../src/pages/instructorAssessments/instructorAssessments.types.ts"],"names":[],"mappings":"","sourcesContent":["export interface StatsUpdateData {\n  assessmentIdsNeedingStatsUpdate: string[];\n  urlPrefix: string;\n}\n"]}

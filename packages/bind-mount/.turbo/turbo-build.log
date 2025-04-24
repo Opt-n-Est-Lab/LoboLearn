@@ -1,0 +1,50 @@
+
+[37;40mgyp[0m [32minfo[0m [35mit worked if it ends with[0m ok
+[37;40mgyp[0m [32minfo[0m [35musing[0m node-gyp@11.2.0
+[37;40mgyp[0m [32minfo[0m [35musing[0m node@18.20.8 | linux | x64
+[37;40mgyp[0m [32minfo[0m [35mfind Python[0m using Python version 3.12.3 found at "/usr/bin/python3"
+
+[37;40mgyp[0m [32minfo[0m [35mspawn[0m /usr/bin/python3
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m [
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '/home/kmranrg/Documents/LoboLearn/node_modules/node-gyp/gyp/gyp_main.py',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m 'binding.gyp',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-f',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m 'make',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-I',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '/home/kmranrg/Documents/LoboLearn/packages/bind-mount/build/config.gypi',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-I',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '/home/kmranrg/Documents/LoboLearn/node_modules/node-gyp/addon.gypi',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-I',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '/home/kmranrg/.cache/node-gyp/18.20.8/include/node/common.gypi',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dlibrary=shared_library',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dvisibility=default',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dnode_root_dir=/home/kmranrg/.cache/node-gyp/18.20.8',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dnode_gyp_dir=/home/kmranrg/Documents/LoboLearn/node_modules/node-gyp',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dnode_lib_file=/home/kmranrg/.cache/node-gyp/18.20.8/<(target_arch)/node.lib',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dmodule_root_dir=/home/kmranrg/Documents/LoboLearn/packages/bind-mount',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Dnode_engine=v8',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '--depth=.',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '--no-parallel',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '--generator-output',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m 'build',
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m '-Goutput_dir=.'
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m ]
+[37;40mgyp[0m [32minfo[0m [35mspawn[0m make
+[37;40mgyp[0m [32minfo[0m [35mspawn args[0m [ 'BUILDTYPE=Release', '-C', 'build' ]
+make: Entering directory '/home/kmranrg/Documents/LoboLearn/packages/bind-mount/build'
+  CXX(target) Release/obj.target/addon/addon.o
+In file included from [01m[K../../../node_modules/nan/nan.h:62[m[K,
+                 from [01m[K../addon.cc:1[m[K:
+[01m[K/home/kmranrg/.cache/node-gyp/18.20.8/include/node/node.h:1014:7:[m[K [01;35m[Kwarning: [m[Kcast between incompatible function types from ‘[01m[Kvoid (*)(Nan::ADDON_REGISTER_FUNCTION_ARGS_TYPE)[m[K’ {aka ‘[01m[Kvoid (*)(v8::Local<v8::Object>)[m[K’} to ‘[01m[Knode::addon_register_func[m[K’ {aka ‘[01m[Kvoid (*)(v8::Local<v8::Object>, v8::Local<v8::Value>, void*)[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-function-type-Wcast-function-type]8;;[m[K]
+ 1014 |       [01;35m[K(node::addon_register_func) (regfunc)[m[K,                          \
+      |       [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kmranrg/.cache/node-gyp/18.20.8/include/node/node.h:1048:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KNODE_MODULE_X[m[K’
+ 1048 |   [01;36m[KNODE_MODULE_X[m[K(modname, regfunc, NULL, 0)  // NOLINT (readability/null_usage)
+      |   [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K../addon.cc:109:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KNODE_MODULE[m[K’
+  109 | [01;36m[KNODE_MODULE[m[K(addon, Initialize)
+      | [01;36m[K^~~~~~~~~~~[m[K
+  SOLINK_MODULE(target) Release/obj.target/addon.node
+  COPY Release/addon.node
+make: Leaving directory '/home/kmranrg/Documents/LoboLearn/packages/bind-mount/build'
+[37;40mgyp[0m [32minfo[0m [35mok[0m 

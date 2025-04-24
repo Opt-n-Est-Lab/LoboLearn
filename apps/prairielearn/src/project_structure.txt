@@ -1,0 +1,1746 @@
+.
+├── admin_queries
+│   ├── course_instance_active_enrollments.json
+│   ├── course_instance_active_enrollments.sql
+│   ├── course_instance_active_enrollments.ts
+│   ├── course_instance_compute_time.json
+│   ├── course_instance_compute_time.sql
+│   ├── course_instance_compute_time.ts
+│   ├── course_instances_usage.json
+│   ├── course_instances_usage.sql
+│   ├── course_instances_usage.ts
+│   ├── courses_with_chunks.json
+│   ├── courses_with_chunks.sql
+│   ├── courses_with_chunks.ts
+│   ├── courses_without_chunks.json
+│   ├── courses_without_chunks.sql
+│   ├── courses_without_chunks.ts
+│   ├── current_active_student_exams.json
+│   ├── current_active_student_exams.sql
+│   ├── current_active_student_exams.ts
+│   ├── current_activity_by_assessment.json
+│   ├── current_activity_by_assessment.sql
+│   ├── current_activity_by_assessment.ts
+│   ├── current_activity_by_course_instance.json
+│   ├── current_activity_by_course_instance.sql
+│   ├── current_activity_by_course_instance.ts
+│   ├── db_query_cancel.json
+│   ├── db_query_cancel.sql
+│   ├── db_query_cancel.ts
+│   ├── db_query_terminate.json
+│   ├── db_query_terminate.sql
+│   ├── db_query_terminate.ts
+│   ├── db_running_queries.json
+│   ├── db_running_queries.sql
+│   ├── db_running_queries.ts
+│   ├── find_courses_by_user.json
+│   ├── find_courses_by_user.sql
+│   ├── find_courses_by_user.ts
+│   ├── generate_and_enroll_users.json
+│   ├── generate_and_enroll_users.ts
+│   ├── generate_assessment_instances.json
+│   ├── generate_assessment_instances.sql
+│   ├── generate_assessment_instances.ts
+│   ├── generate_uuids.json
+│   ├── generate_uuids.ts
+│   ├── institutions_usage.json
+│   ├── institutions_usage.sql
+│   ├── institutions_usage.ts
+│   ├── instructors_by_institution.json
+│   ├── instructors_by_institution.sql
+│   ├── instructors_by_institution.ts
+│   ├── README.md
+│   ├── select_or_insert_user.json
+│   ├── select_or_insert_user.sql
+│   ├── select_or_insert_user.ts
+│   ├── upcoming_exams.json
+│   ├── upcoming_exams.sql
+│   ├── upcoming_exams.ts
+│   ├── util.ts
+│   ├── workspace_hosts.json
+│   ├── workspace_hosts.sql
+│   ├── workspace_hosts.ts
+│   ├── workspace_hosts_update_state.json
+│   ├── workspace_hosts_update_state.sql
+│   ├── workspace_hosts_update_state.ts
+│   ├── workspaces.json
+│   ├── workspaces.sql
+│   └── workspaces.ts
+├── api
+│   ├── trpc
+│   │   ├── index.ts
+│   │   ├── routers
+│   │   └── trpc.ts
+│   └── v1
+│       ├── endpoints
+│       ├── error.ts
+│       ├── index.ts
+│       ├── notFound.ts
+│       └── prettyPrintJson.ts
+├── batched-migrations
+│   ├── 20230418190511_variants_course_id.ts
+│   ├── 20230913181816_pl_courses_created_at.sql
+│   ├── 20230913181816_pl_courses_created_at.ts
+│   ├── 20231122001903_variants__broken_at__backfill.sql
+│   ├── 20231122001903_variants__broken_at__backfill.ts
+│   ├── 20240108185602_group_users__group_config_id__backfill.sql
+│   ├── 20240108185602_group_users__group_config_id__backfill.ts
+│   ├── 20240320000007_workspaces__disk_usage_bytes__backfill.ts
+│   ├── 20240523183853_sync_courses_for_implicit_flag.ts
+│   ├── 20241018171312_questions__share_publicly__backfill.sql
+│   ├── 20241018171312_questions__share_publicly__backfill.ts
+│   ├── 20250212010945_variants__authn_user_id__backfill.sql
+│   ├── 20250212010945_variants__authn_user_id__backfill.ts
+│   ├── 20250214035153_course_instance_usages__submissions__backfill.sql
+│   ├── 20250214035153_course_instance_usages__submissions__backfill.ts
+│   ├── 20250214171608_course_instance_usages__external_grading_jobs__backfill.sql
+│   ├── 20250214171608_course_instance_usages__external_grading_jobs__backfill.ts
+│   ├── 20250215015626_course_instance_usages__workspaces__backfill.sql
+│   ├── 20250215015626_course_instance_usages__workspaces__backfill.ts
+│   ├── 20250226004222_course_instance_usages__submissions__backfill_v2.sql
+│   ├── 20250226004222_course_instance_usages__submissions__backfill_v2.ts
+│   ├── 20250318174636_course_instance_usages__submissions__backfill_v3.sql
+│   ├── 20250318174636_course_instance_usages__submissions__backfill_v3.ts
+│   ├── 20250318175247_course_instance_usages__external_grading_jobs__backfill_v3.sql
+│   ├── 20250318175247_course_instance_usages__external_grading_jobs__backfill_v3.ts
+│   ├── 20250318180548_course_instance_usages__workspaces__backfill_v3.sql
+│   └── 20250318180548_course_instance_usages__workspaces__backfill_v3.ts
+├── components
+│   ├── AiGradingHtmlPreview.html.ts
+│   ├── AssessmentBadge.html.ts
+│   ├── AssessmentModuleHeading.html.ts
+│   ├── AssessmentNavigation.html.ts
+│   ├── AssessmentOpenInstancesAlert.html.ts
+│   ├── AssessmentQuestions.html.ts
+│   ├── AssessmentRegenerate.html.ts
+│   ├── AssessmentScorePanel.html.ts
+│   ├── AssessmentSetHeading.html.ts
+│   ├── ChangeIdButton.html.ts
+│   ├── CourseRequestsTable.html.ts
+│   ├── EditQuestionPointsScore.html.ts
+│   ├── FileBrowser.html.ts
+│   ├── GroupWorkInfoContainer.html.ts
+│   ├── HeadContents.html.ts
+│   ├── InstructorInfoPanel.html.ts
+│   ├── InsufficientCoursePermissionsCard.ts
+│   ├── IssueBadge.html.ts
+│   ├── JobSequenceResults.html.ts
+│   ├── JobStatus.html.ts
+│   ├── Modal.html.ts
+│   ├── NavbarContext.html.ts
+│   ├── Navbar.html.ts
+│   ├── Navbar.types.ts
+│   ├── PageLayout.html.ts
+│   ├── Pager.html.ts
+│   ├── PersonalNotesPanel.html.ts
+│   ├── ProgressCircle.html.ts
+│   ├── QRCodeModal.html.ts
+│   ├── QuestionContainer.html.ts
+│   ├── QuestionContainer.types.ts
+│   ├── QuestionNavigation.html.ts
+│   ├── QuestionScore.html.ts
+│   ├── QuestionsTable.html.ts
+│   ├── Scorebar.html.ts
+│   ├── SideNav.html.ts
+│   ├── StudentAccessRulesPopover.html.ts
+│   ├── SubmissionPanel.html.ts
+│   ├── SyncErrorsAndWarnings.html.ts
+│   ├── SyncProblemButton.html.ts
+│   ├── TagBadge.html.ts
+│   ├── TagDescription.html.ts
+│   ├── TimeLimitExpiredModal.html.ts
+│   ├── TopicBadge.html.ts
+│   └── TopicDescription.html.ts
+├── cron
+│   ├── autoFinishExams.sql
+│   ├── autoFinishExams.ts
+│   ├── calculateAssessmentQuestionStats.sql
+│   ├── calculateAssessmentQuestionStats.ts
+│   ├── cleanTimeSeries.sql
+│   ├── cleanTimeSeries.ts
+│   ├── errorAbandonedJobs.ts
+│   ├── index.sql
+│   ├── index.ts
+│   ├── sendExternalGraderDeadLetters.ts
+│   ├── sendExternalGraderStats.ts
+│   ├── sendUnfinishedCronWarnings.sql
+│   ├── sendUnfinishedCronWarnings.ts
+│   ├── serverLoad.ts
+│   ├── serverUsage.ts
+│   ├── workspaceHostTransitions.sql
+│   ├── workspaceHostTransitions.ts
+│   ├── workspaceTimeoutStop.sql
+│   ├── workspaceTimeoutStop.ts
+│   ├── workspaceTimeoutWarn.sql
+│   └── workspaceTimeoutWarn.ts
+├── ee
+│   ├── auth
+│   │   ├── azure
+│   │   ├── lti13
+│   │   ├── prairietest.html.ts
+│   │   ├── prairietest.ts
+│   │   └── saml
+│   ├── cron
+│   │   ├── chunksHostAutoScaling.ts
+│   │   ├── externalGraderLoad.ts
+│   │   ├── workspaceHostLoads.sql
+│   │   └── workspaceHostLoads.ts
+│   ├── lib
+│   │   ├── ai-grading
+│   │   ├── ai-grading.sql
+│   │   ├── ai-grading.ts
+│   │   ├── ai-question-generation-benchmark.sql
+│   │   ├── ai-question-generation-benchmark.ts
+│   │   ├── aiQuestionGeneration.sql
+│   │   ├── aiQuestionGeneration.ts
+│   │   ├── billing
+│   │   ├── contextEmbeddings.sql
+│   │   ├── contextEmbeddings.ts
+│   │   ├── context-parsers
+│   │   ├── institution.sql
+│   │   ├── institution.ts
+│   │   ├── lti13.sql
+│   │   ├── lti13.ts
+│   │   ├── selectAndAuthz.sql
+│   │   ├── selectAndAuthz.ts
+│   │   ├── terms.ts
+│   │   └── validateHTML.ts
+│   ├── LICENSE
+│   ├── middlewares
+│   │   ├── checkPlanGrantsForQuestion.ts
+│   │   └── checkPlanGrants.ts
+│   ├── models
+│   │   ├── course-instance-required-plans.sql
+│   │   ├── course-instance-required-plans.ts
+│   │   ├── enrollment.sql
+│   │   ├── enrollment.test.ts
+│   │   ├── enrollment.ts
+│   │   ├── institution-administrator.sql
+│   │   ├── institution-administrator.ts
+│   │   ├── lti13Instance.sql
+│   │   ├── lti13Instance.ts
+│   │   ├── plan-grants.sql
+│   │   ├── plan-grants.test.ts
+│   │   ├── plan-grants.ts
+│   │   ├── stripe-checkout-sessions.sql
+│   │   └── stripe-checkout-sessions.ts
+│   ├── pages
+│   │   ├── administratorInstitutionAdmins
+│   │   ├── administratorInstitutionCourse
+│   │   ├── administratorInstitutionCourseInstance
+│   │   ├── administratorInstitutionCourses
+│   │   ├── administratorInstitutionGeneral
+│   │   ├── administratorInstitutionLti13
+│   │   ├── administratorInstitutionSaml
+│   │   ├── administratorInstitutionSso
+│   │   ├── institutionAdminAdmins
+│   │   ├── institutionAdminCourses
+│   │   ├── instructorAiGenerateDraftEditor
+│   │   ├── instructorAiGenerateDrafts
+│   │   ├── instructorAiGradingRuns
+│   │   ├── instructorInstanceAdminBilling
+│   │   ├── instructorInstanceAdminLti13
+│   │   ├── lti13Config
+│   │   ├── lti13CourseNavigation
+│   │   ├── lti13Jwks
+│   │   ├── studentCourseInstanceUpgrade
+│   │   └── terms
+│   ├── routers
+│   │   ├── administratorInstitution.ts
+│   │   ├── institutionAdmin.ts
+│   │   └── lti13.ts
+│   ├── tests
+│   │   └── ee-helpers.ts
+│   └── webhooks
+│       └── stripe
+├── executor.ts
+├── lib
+│   ├── ai-grading.ts
+│   ├── assessment.sql
+│   ├── assessment.ts
+│   ├── assets.ts
+│   ├── authn.sql
+│   ├── authn.ts
+│   ├── aws.ts
+│   ├── base64-util.ts
+│   ├── canonical-logger.ts
+│   ├── chalk.ts
+│   ├── chunks.sql
+│   ├── chunks.ts
+│   ├── code-caller
+│   │   ├── code-caller-container.ts
+│   │   ├── code-caller-native.ts
+│   │   ├── code-caller-shared.ts
+│   │   ├── index.ts
+│   │   └── README.md
+│   ├── config.ts
+│   ├── cookie.ts
+│   ├── copy-question.sql
+│   ├── copy-question.ts
+│   ├── course-files-api.ts
+│   ├── course-request.sql
+│   ├── course-request.ts
+│   ├── course.sql
+│   ├── course.ts
+│   ├── db-types.ts
+│   ├── deferred.ts
+│   ├── editors.sql
+│   ├── editors.test.ts
+│   ├── editors.ts
+│   ├── editorUtil.sql
+│   ├── editorUtil.ts
+│   ├── exam-mode.ts
+│   ├── externalGraderCommon.test.ts
+│   ├── externalGraderCommon.ts
+│   ├── externalGraderLocal.sql
+│   ├── externalGraderLocal.ts
+│   ├── externalGraderResults.sql
+│   ├── externalGraderResults.ts
+│   ├── externalGrader.sql
+│   ├── externalGraderSqs.sql
+│   ├── externalGraderSqs.ts
+│   ├── externalGrader.ts
+│   ├── externalGradingSocket.sql
+│   ├── externalGradingSocket.ts
+│   ├── externalGradingSocket.types.ts
+│   ├── faker.ts
+│   ├── features
+│   │   ├── index.ts
+│   │   ├── manager.sql
+│   │   ├── manager.ts
+│   │   └── middleware.ts
+│   ├── file-paths.sql
+│   ├── file-paths.ts
+│   ├── file-store.sql
+│   ├── file-store.ts
+│   ├── format.test.ts
+│   ├── format.ts
+│   ├── getting-started.sql
+│   ├── getting-started.ts
+│   ├── github.sql
+│   ├── github.test.ts
+│   ├── github.ts
+│   ├── grading.sql
+│   ├── grading.ts
+│   ├── groups.sql
+│   ├── groups.ts
+│   ├── group-update.sql
+│   ├── group-update.ts
+│   ├── id.ts
+│   ├── instructorFiles.ts
+│   ├── issues.ts
+│   ├── json-load.ts
+│   ├── json.test.ts
+│   ├── json.ts
+│   ├── license.ts
+│   ├── lifecycle-hooks.ts
+│   ├── load.sql
+│   ├── load.ts
+│   ├── local-cache.ts
+│   ├── ltiOutcomes.sql
+│   ├── ltiOutcomes.ts
+│   ├── manualGrading.sql
+│   ├── manualGrading.ts
+│   ├── markdown.test.ts
+│   ├── markdown.ts
+│   ├── navPageTabs.ts
+│   ├── opsbot.ts
+│   ├── paths.ts
+│   ├── prettier.ts
+│   ├── question-render.sql
+│   ├── question-render.ts
+│   ├── question-render.types.ts
+│   ├── question-submission.ts
+│   ├── question-testing.sql
+│   ├── question-testing.ts
+│   ├── question-variant.sql
+│   ├── question-variant.ts
+│   ├── redirect.ts
+│   ├── regrading.sql
+│   ├── regrading.ts
+│   ├── require-frontend.ts
+│   ├── sanitize-name.ts
+│   ├── score-upload.sql
+│   ├── score-upload.ts
+│   ├── sentry.ts
+│   ├── server-jobs.sql
+│   ├── server-jobs.ts
+│   ├── server-jobs.types.ts
+│   ├── session-store.sql
+│   ├── session-store.test.sql
+│   ├── session-store.test.ts
+│   ├── session-store.ts
+│   ├── socket-server.ts
+│   ├── telemetry
+│   │   └── socket-activity-metrics.ts
+│   ├── timed.ts
+│   ├── timezones.sql
+│   ├── timezones.ts
+│   ├── types.ts
+│   ├── uri-util.test.ts
+│   ├── uri-util.ts
+│   ├── url.ts
+│   ├── user.test.ts
+│   ├── user.ts
+│   ├── workspaceHost.sql
+│   ├── workspaceHost.ts
+│   ├── workspace.sql
+│   └── workspace.ts
+├── middlewares
+│   ├── authn.sql
+│   ├── authnToken.sql
+│   ├── authnToken.ts
+│   ├── authn.ts
+│   ├── authzAuthnHasCoursePreviewOrInstanceView.ts
+│   ├── authzCourseOrInstance.sql
+│   ├── authzCourseOrInstance.ts
+│   ├── authzHasCourseInstanceAccess.ts
+│   ├── authzHasCoursePreviewOrInstanceView.ts
+│   ├── authzHasCoursePreview.ts
+│   ├── authzIsAdministrator.ts
+│   ├── authzWorkspaceCookieCheck.ts
+│   ├── authzWorkspaceCookieSet.ts
+│   ├── authzWorkspace.sql
+│   ├── authzWorkspace.ts
+│   ├── autoEnroll.ts
+│   ├── clearCookies.ts
+│   ├── clientFingerprint.sql
+│   ├── clientFingerprint.ts
+│   ├── content-security-policy.ts
+│   ├── cors.ts
+│   ├── csrfToken.ts
+│   ├── date.ts
+│   ├── effectiveRequestChanged.ts
+│   ├── enterpriseOnly.ts
+│   ├── forbidAccessInExamMode.ts
+│   ├── logPageView.sql
+│   ├── logPageView.ts
+│   ├── logRequest.ts
+│   ├── logResponse.ts
+│   ├── notFound.ts
+│   ├── redirectEffectiveAccessDenied.ts
+│   ├── selectAndAuthzAssessment.html.ts
+│   ├── selectAndAuthzAssessmentInstance.sql
+│   ├── selectAndAuthzAssessmentInstance.ts
+│   ├── selectAndAuthzAssessmentQuestion.sql
+│   ├── selectAndAuthzAssessmentQuestion.ts
+│   ├── selectAndAuthzAssessment.sql
+│   ├── selectAndAuthzAssessment.ts
+│   ├── selectAndAuthzInstanceQuestion.sql
+│   ├── selectAndAuthzInstanceQuestion.ts
+│   ├── selectAndAuthzInstructorQuestion.sql
+│   ├── selectAndAuthzInstructorQuestion.ts
+│   ├── selectAssessments.sql
+│   ├── selectAssessments.ts
+│   ├── selectGettingStartedTasksCounts.ts
+│   ├── selectOpenIssueCount.sql
+│   ├── selectOpenIssueCount.ts
+│   ├── staticNodeModules.ts
+│   ├── studentAssessmentAccess.html.ts
+│   ├── studentAssessmentAccess.ts
+│   ├── studentAssessmentInstance.sql
+│   ├── studentAssessmentInstance.ts
+│   ├── studentAssessmentRedirect.sql
+│   ├── studentAssessmentRedirect.ts
+│   └── workspaceProxy.ts
+├── migrations
+│   ├── 20170428200859_initial_state.sql
+│   ├── 20170428200900_assessement_access_rules__time_limit_min__add.sql
+│   ├── 20170428200901_assessment_instances__date_limit__add.sql
+│   ├── 20170428200902_assessment_instances__auto_close__add.sql
+│   ├── 20170428200903_assessment_instances__tmp_upgraded_iq_status__add.sql
+│   ├── 20170428200904_assessments__auto_close__add.sql
+│   ├── 20170428200905_course_instances__display_timezone__add.sql
+│   ├── 20170428200906_pl_courses__display_timezone__add.sql
+│   ├── 20170429082806_enum_instance_question_status__create.sql
+│   ├── 20170429082807_instance_questions__status__add.sql
+│   ├── 20170429082808_alternative_groups__unique__assessment_id__number__reorder.sql
+│   ├── 20170429082809_assessment_access_rules__unique__assessment_id__number__reorder.sql
+│   ├── 20170429082810_assessment_instances__instrutor_opened__drop.sql
+│   ├── 20170429082811_assessment_instances__unique__assessment_id__user_id__number__reorder.sql
+│   ├── 20170429082812_assessment_questions__force_max_points__add.sql
+│   ├── 20170429082813_assessment_sets__unique__course_id__name__reorder.sql
+│   ├── 20170429082814_course_instance_access_rules__unique__course_instance_id__number__reorder.sql
+│   ├── 20170429082815_job_sequences__course_instance_id__add.sql
+│   ├── 20170429082816_job_sequences__assessment_id__add.sql
+│   ├── 20170429082817_jobs__course_instance_id__add.sql
+│   ├── 20170429082818_jobs__assessment_id__add.sql
+│   ├── 20170429082819_questions__unique__course_id__number__reorder.sql
+│   ├── 20170429082820_questions__autograding_enabled__autograder__environment__add.sql
+│   ├── 20170429082821_tags__course_id__name__reorder.sql
+│   ├── 20170429082822_topics__course_id__name__reorder.sql
+│   ├── 20170429082823_variants__unique__instance_question_id__number__reorder.sql
+│   ├── 20170429082824_courses__create.sql
+│   ├── 20170429082825_exams__create.sql
+│   ├── 20170429082826_reservations__create.sql
+│   ├── 20170429082827_courses__pl_course_id__add.sql
+│   ├── 20170429082828_zones__unique__assessment_id__number__reorder.sql
+│   ├── 20170429082829_submissions__grading_method__add.sql
+│   ├── 20170429082830_instance_questions__authn_user_id__add.sql
+│   ├── 20170429082831_instance_questions__duration__first_duration__add.sql
+│   ├── 20170429082832_submissions__duration__add.sql
+│   ├── 20170429082833_variants__authn_user_id__add.sql
+│   ├── 20170429082834_variants__duration__first_duration__add.sql
+│   ├── 20170429082835_assessment_instances__time_limit_min__drop.sql
+│   ├── 20170429082836_questions__external_grading__change.sql
+│   ├── 20170429082837_gradings_logs__extra_times__add.sql
+│   ├── 20170429082838_questions__single_variant__add.sql
+│   ├── 20170429082839_questions__external_grading_change.sql
+│   ├── 20170430225459_last_accesses__create.sql
+│   ├── 20170504085908_config__create.sql
+│   ├── 20170511134617_config__display_timezone__insert.sql
+│   ├── 20170511134618_exam_mode_networks__create.sql
+│   ├── 20170511140518_indexes_update.sql
+│   ├── 20170511140519_questions__config__drop.sql
+│   ├── 20170512130530_courses__pl_courses__rename_cleanup.sql
+│   ├── 20170512130531_users__user_id__rename_cleanup.sql
+│   ├── 20170514163619_grading_logs__rename__grading_jobs.sql
+│   ├── 20170516205210_users__uin__unique_add.sql
+│   ├── 20170516205211_jobs__job_sequences__drop_extra_foreign_keys.sql
+│   ├── 20170516223515_course_instance_access_rules__institution__add.sql
+│   ├── 20170516224411_users__provider__add.sql
+│   ├── 20170516224412_pl_courses__options__add.sql
+│   ├── 20170516224413_enum_question_type__freeform__add.sql
+│   ├── 20170516224414_errors__add.sql
+│   ├── 20170623121937_assessment_access_rules__password__add.sql
+│   ├── 20170715083623_variants__console__add.sql
+│   ├── 20170718091712_submissions__grading_jobs__partial_scores__add.sql
+│   ├── 20170719084424_submissions__raw_submitted_answer__parse_errors__add.sql
+│   ├── 20170722114413_submissions__params__true_answer__add.sql
+│   ├── 20170723090307_variants__valid__add.sql
+│   ├── 20170723122207_errors__id__primary_key__constraint_add.sql
+│   ├── 20170723122208_errors__variant_id__add.sql
+│   ├── 20170723122209_errors__open__add.sql
+│   ├── 20170723122210_errors__date__default.sql
+│   ├── 20170723122211_errors__instructor_message__add.sql
+│   ├── 20170731193513_variants__console__drop.sql
+│   ├── 20170802104018_variants__question_id__user_id__add.sql
+│   ├── 20170803112748_enum_submissions_type__drop.sql
+│   ├── 20170806085650_submissions__broken__gradable__add.sql
+│   ├── 20170807122914_variants__valid__broken__rename.sql
+│   ├── 20170807122915_variants__available__open__rename.sql
+│   ├── 20170807122916_enum_instance_question_status__grading__add.sql
+│   ├── 20170807123908_submissions__parse_errors__format_errors__rename.sql
+│   ├── 20170824203937_instance_questions__highest_submission_score__add.sql
+│   ├── 20170902142323_instance_questions__points_list_original__add.sql
+│   ├── 20170902184217_submissions__v2_score__add.sql
+│   ├── 20170902184218_grading_jobs__v2_score__add.sql
+│   ├── 20170903152154_instance_questions__number_attempts__update.sql
+│   ├── 20170904114538_homework_partial_credit__columns__add.sql
+│   ├── 20170906092028_instance_questions__variants_points_list__update.sql
+│   ├── 20170925133104_questions__timeout__add.sql
+│   ├── 20170928053038_errors__issues__rename.sql
+│   ├── 20170928053039_issues__instance_question_id__add.sql
+│   ├── 20170928053040_issues__manually_reported__add.sql
+│   ├── 20170928053041_assessments__allow_issue_reporting__add.sql
+│   ├── 20171001101621_grader_loads__create.sql
+│   ├── 20171011060538_instance_questions__points_list_original__update.sql
+│   ├── 20171012060805_grading_jobs__date__create_index.sql
+│   ├── 20171013094452_questions__partial_credit__add.sql
+│   ├── 20171027064532_question_score_logs__grading_job_id__add.sql
+│   ├── 20171101063221_course_instances__ps_linked__add.sql
+│   ├── 20171102164811_grading_jobs__logs__create_columns.sql
+│   ├── 20171108063855_assessment_questions__add_stats_columns.sql
+│   ├── 20171108063856_assessments__mode__add.sql
+│   ├── 20171108063857_assessments__stats_last_updated__add.sql
+│   ├── 20171108063858_instance_questions__stats__add.sql
+│   ├── 20171108063859_instance_questions__stats__run_migration.sql
+│   ├── 20171203091303_submissions__fix_nan_scores.sql
+│   ├── 20180102142506_issues__display_id__drop.sql
+│   ├── 20180130082235_server_loads__create.sql
+│   ├── 20180209062449_server_loads__job_type__add.sql
+│   ├── 20180301155930_questions__external_grading_enable_networking__add.sql
+│   ├── 20180409063039_time_series__create.sql
+│   ├── 20180415091616_current_pages__create.sql
+│   ├── 20180415091617_page_view_logs__create.sql
+│   ├── 20180415091618_submissions__date__create_index.sql
+│   ├── 20180416220356_variants__course_instance_id__add.sql
+│   ├── 20180425063321_variants__course_instance_id__update.sql
+│   ├── 20180427065656_enum_mode_add_seb.sql
+│   ├── 20180427065657_assessment_access_fules__seb_config__add.sql
+│   ├── 20180505094412_jobs__env__add.sql
+│   ├── 20180521130243_named_locks__create.sql
+│   ├── 20180521130244_cron_jobs__create.sql
+│   ├── 20180521130245_assessment_access_rules__exam_id__add.sql
+│   ├── 20180521130246_exams__courses__extra_info__add.sql
+│   ├── 20180831193256_page_view_logs__panel_render_info__add.sql
+│   ├── 20180831193257_pl_courses__commit_hash__add.sql
+│   ├── 20180909182051_access_tokens__create.sql
+│   ├── 20180920143547_zones__max_points__add.sql
+│   ├── 20180920143548_zones__best_questions__add.sql
+│   ├── 20180920143549_instance_questions__used_for_grade__add.sql
+│   ├── 20180921090039_assessments__allow_issue_reporting__alter.sql
+│   ├── 20180927061155_multiple_tables__create_index.sql
+│   ├── 20181013084056_users__lti_columns.sql
+│   ├── 20181013084057_lti_credentials.sql
+│   ├── 20181013084058_lti_links__create.sql
+│   ├── 20181013084059_lti_outcomes__create.sql
+│   ├── 20181021094511_assessment_instances__tmp_upgraded_iq_status__drop.sql
+│   ├── 20181102161916_assessment_access_rules__exam_uuid__add.sql
+│   ├── 20181115195757_users__lti_course_instance_id__alter.sql
+│   ├── 20190311074617_assessment_files__create.sql
+│   ├── 20190705101629_jobs__no_job_sequence_update__add.sql
+│   ├── 20190705101630_file_edits__create.sql
+│   ├── 20190712132434_pl_courses_options__set_not_null.sql
+│   ├── 20190712132435_uuids_locally_unique.sql
+│   ├── 20190712132436_assessments__assessment_set_id__set_not_null.sql
+│   ├── 20190712132437_question_tags__number__drop.sql
+│   ├── 20190801120108_file_edits__commit_hash__rename.sql
+│   ├── 20190801120109_file_edits__did_save__did_sync__add.sql
+│   ├── 20190801120110_file_edits__created_at__add.sql
+│   ├── 20190806144339_file_edits__job_sequence_id__add.sql
+│   ├── 20190806144340_jobs__number__drop.sql
+│   ├── 20190817094534_cron_jobs__succeeded_at__add.sql
+│   ├── 20190919051758_file_edits__file_id__add.sql
+│   ├── 20191001203011_grader_loads__date__add_index.sql
+│   ├── 20191001203012_grader_loads__lifecycle_state__add.sql
+│   ├── 20191011144948_assessments__assessment_set_id_fkey__alter.sql
+│   ├── 20191124092127_users__uin__alter_type_to_text.sql
+│   ├── 20191126081951_institutions__create.sql
+│   ├── 20191220125840_file_transfers__create.sql
+│   ├── 20200110133802_authn_providers__create.sql
+│   ├── 20200110133803_users__institution_id__add.sql
+│   ├── 20200110133804_institutions__uid_regexp__add.sql
+│   ├── 20200110133805_pl_courses__institution_id__set_not_null.sql
+│   ├── 20200110133806_institutions__add_lti.sql
+│   ├── 20200111103714_institution_authn_providers__add_defaults.sql
+│   ├── 20200116145716_news_items__create.sql
+│   ├── 20200121074447_course_instances__number__drop.sql
+│   ├── 20200122072314_users__institution_id__lti_fix.sql
+│   ├── 20200319112358_instance_questions__modified_at__add.sql
+│   ├── 20200322134035_assessments__allow_real_time_grading__add.sql
+│   ├── 20200324193052_assessment_access_rules__show_closed_assessment__add.sql
+│   ├── 20200328053414_assessments__require_honor_code__add.sql
+│   ├── 20200406063848_query_runs__create.sql
+│   ├── 20200406063849_assessment_access_rules__start_date__create_index.sql
+│   ├── 20200420090239_questions__client_dependencies__add.sql
+│   ├── 20200421065630_enum_instance_question_status__invalid__add.sql
+│   ├── 20200421065631_grading_jobs__add_gradable_attribute.sql
+│   ├── 20200624121119_workspace_hosts__create.sql
+│   ├── 20200624121120_workspaces__create.sql
+│   ├── 20200624121121_workspace_logs__create.sql
+│   ├── 20200708181805_questions__workspace_image__add.sql
+│   ├── 20200708181806_workspaces__state__alter.sql
+│   ├── 20200708181807_questions__workspace_graded_files__add.sql
+│   ├── 20200708181808_variants__workspace_id__add.sql
+│   ├── 20200708184343_questions__workspace_port__add.sql
+│   ├── 20200713092725_questions__workspace_args__add.sql
+│   ├── 20200717081330_reservations__checked_in__add.sql
+│   ├── 20200717081331_reservations__user_id__create_partial_index.sql
+│   ├── 20200717090850_reservations__user_id__access_end__create_index.sql
+│   ├── 20200719153515_pl_courses__is_example_course__add.sql
+│   ├── 20200726095329_questions__workspace_url_rewrite__add.sql
+│   ├── 20200727124146_questions__workspace_home__add.sql
+│   ├── 20200727124147_workspaces__port__add.sql
+│   ├── 20200730135724_workspace_hosts__load_count__add.sql
+│   ├── 20200730143600_workspaces__sync_ignore__add.sql
+│   ├── 20200731230351_workspaces__hostname__add.sql
+│   ├── 20200801134032_workspace_hosts__instance_id__unique.sql
+│   ├── 20200805140501_workspaces__launched_at__add.sql
+│   ├── 20200807191524_chunks__create.sql
+│   ├── 20200808220731_workspaces__s3__drop.sql
+│   ├── 20200809124512_workspaces__heartbeat_at__add.sql
+│   ├── 20200813150248_workspaces__launch_settings__add.sql
+│   ├── 20200813162146_workspaces__created_at__add.sql
+│   ├── 20200813162147_workspaces__state_updated_at__add.sql
+│   ├── 20200816154349_workspaces__message__add.sql
+│   ├── 20200817231422_group_change_assessment_inst.sql
+│   ├── 20200818200924_assessments__assessment_set_id__nullable.sql
+│   ├── 20200818200925_resilient_syncing.sql
+│   ├── 20200818200926_assessments__number__default.sql
+│   ├── 20200818200927_users__deleted_at__add.sql
+│   ├── 20200818200928_files__assessment_instance_id__change_cascade_set_null.sql
+│   ├── 20200818200929_files__instance_question_id__change_cascade_set_null.sql
+│   ├── 20200818211830_workspaces__version__add.sql
+│   ├── 20200821085039_workspace_logs__state__add.sql
+│   ├── 20200824211601_workspace_hosts__autoscaling__add.sql
+│   ├── 20200826053505_course_requests__create.sql
+│   ├── 20200826053506_jobs__add_course_request_id.sql
+│   ├── 20200828204441_workspace_hosts__state__terminated_at__create_index.sql
+│   ├── 20200831064326_workspaces__workspace_host_id__state__create_index.sql
+│   ├── 20200913144808_chunks__add_unique_columns.sql
+│   ├── 20200913144809_questions__course_id__uuid__create_index.sql
+│   ├── 20200925094923_workspaces__timestamps__add.sql
+│   ├── 20200926103603_workspaces__state__launched_at__create_index.sql
+│   ├── 20200926104331_workspace_hosts__unhealthy_reason__add.sql
+│   ├── 20201010075821_assessment_access_rules__show_closed_assessment_grade__add.sql
+│   ├── 20201219101121_pl_courses__branch__add.sql
+│   ├── 20201219123106_files__add_storage_type.sql
+│   ├── 20201219202851_chunk_type__add_extensions.sql
+│   ├── 20210105123843_assessment_state_logs__date_limit__add.sql
+│   ├── 20210108163524_assessment_questions__grade_rate__add.sql
+│   ├── 20210127104751_pl_courses_manual_grading_visible.sql
+│   ├── 20210208200853_workspaces__home_dir__add.sql
+│   ├── 20210219103601_group_config_unique_index.sql
+│   ├── 20210228054152_questions__template_directory__create_index.sql
+│   ├── 20210402054828_course_instances__hide_in_enroll_page__add.sql
+│   ├── 20210529124657_assessments__max_bonus_points__add.sql
+│   ├── 20210723073933_assessment_access_rules__active__add.sql
+│   ├── 20210723075656_submissions__regradable__add.sql
+│   ├── 20210801214451_questions__workspace_enable_networking__add.sql
+│   ├── 20210820033113_enum_course_role__alter.sql
+│   ├── 20210820033114_course_instance_permissions__create.sql
+│   ├── 20210830061048_enum_exam_type__create.sql
+│   ├── 20210830061049_exams__exam_type__add.sql
+│   ├── 20210913071952_pt_tables__create.sql
+│   ├── 20210914210847_pt_courses__create.sql
+│   ├── 20210914210848_assessment_access_rules__exam_uuid__create_index.sql
+│   ├── 20211006112429_questions__workspace_environment__add.sql
+│   ├── 20211006112430_questions__external_grading_environment__add.sql
+│   ├── 20220215091459_force_sequential_questions__add.sql
+│   ├── 20220227105243_assessment_questions__effective_advance_score_perc__default.sql
+│   ├── 20220227131257_assessment_questions__effective_advance_score_perc__update.sql
+│   ├── 20220314170416_group_logs__indexes_add.sql
+│   ├── 20220314185427_assessment_instances__grading_needed__add.sql
+│   ├── 20220316082949_course_requests__extra_columns_add.sql
+│   ├── 20220325150608_instance_questions__requires_manual_grading__add.sql
+│   ├── 20220331113908_instance_questions__requires_manual_grading__update.sql
+│   ├── 20220519133402_chunks__unique_values_key__reorder.sql
+│   ├── 20220520091928_group_role_tables__create.sql
+│   ├── 20220529145528_workspaces__durations__add.sql
+│   ├── 20220529145529_workspaces__created_at__create_index.sql
+│   ├── 20220529145530_workspaces__launching_duration__compute.sql
+│   ├── 20220529145531_workspaces__running_duration__compute.sql
+│   ├── 20220629130738_questions__show_correct_answer__add.sql
+│   ├── 20220801125634_saml_providers__add.sql
+│   ├── 20220808164519_institutions__default_authn_provider__add.sql
+│   ├── 20220810085513_assessment_modules__add.sql
+│   ├── 20220816180608_manual_points__add.sql
+│   ├── 20220817035519_pt_location_networks__create.sql
+│   ├── 20220818203521_audit_logs__institution_id__add.sql
+│   ├── 20220825210520_users__uin_unique_per_institution.sql
+│   ├── 20220830011729_group_configs__using_group_roles__add.sql
+│   ├── 20220905173159__rubrics__create.sql
+│   ├── 20221007225011_jobs__heartbeat_at__add.sql
+│   ├── 20221011010233_jobs__status__add_index.sql
+│   ├── 20221011211919_issues__question_id__add_index.sql
+│   ├── 20221011222213_assessments__mode__drop.sql
+│   ├── 20221012104621_assessment_questions__max_manual_points__update.sql
+│   ├── 20221018160700_instance_questions__status__update.sql
+│   ├── 20221122001508_time_series__date__add_index.sql
+│   ├── 20221122002334_assessment_instances__assessment_id__modified_at__add_index.sql
+│   ├── 20221122004832_assessments__statistics__add.sql
+│   ├── 20230119091410_points_in_grading__drop.sql
+│   ├── 20230201144139_pl_sessions_create.sql
+│   ├── 20230210163118_assessment_instances__include_in_statistics__add.sql
+│   ├── 20230210165254_assessment_instances__include_in_statistics__update.sql
+│   ├── 20230308213204_audit_logs__group_id__drop_index.sql
+│   ├── 20230309000047_page_view_logs__panel_count__drop.sql
+│   ├── 20230309222017_workspace_logs__workspace_id__create_index.sql
+│   ├── 20230310174245_workspace_host_logs__create.sql
+│   ├── 20230331212027_institutions__display_timezone__add.sql
+│   ├── 20230331223233_job_sequences__course_request_id__add_index.sql
+│   ├── 20230412200134_feature_grants__create.sql
+│   ├── 20230415165254_variants__reference_course_id.sql
+│   ├── 20230418190511_variants__course_id__backfill.mts
+│   ├── 20230421225700_enum_log_level__drop.sql
+│   ├── 20230421234930_workspace_columns_cleanup.sql
+│   ├── 20230502204808_job_sequences__legacy__add.sql
+│   ├── 20230517203435_jobs__stdio__drop.sql
+│   ├── 20230518083558_display_timezone__not_null.sql
+│   ├── 20230522221155_plans__create.sql
+│   ├── 20230523200508_enrollment_limits.sql
+│   ├── 20230523200758_variants__course_id__backfill__finalize.mts
+│   ├── 20230523200759_variants__course_id__nonnull.sql
+│   ├── 20230526124740_courses__manual_grading_visible__drop.sql
+│   ├── 20230530202236_feature_grants__type__drop_not_null.sql
+│   ├── 20230530202846_feature_grants__add_indexes_without_type.sql
+│   ├── 20230531211528__config__drop.sql
+│   ├── 20230609223157_group_users__remove_invalid_rows.sql
+│   ├── 20230612162858_feature_grants__unique_nulls_not_distinct.sql
+│   ├── 20230612165721_feature_grants__type__drop.sql
+│   ├── 20230622164908_pl_courses__template_course__add.sql
+│   ├── 20230626165300_jobs__data__add.sql
+│   ├── 20230626193726_pl_courses__grading_queue__drop.sql
+│   ├── 20230626194943_workspace_hosts__instance_id__set_not_null.sql
+│   ├── 20230720173159_audit_logs__enrollment_id__add.sql
+│   ├── 20230725234551_plan_grants__enrollment_id__drop.sql
+│   ├── 20230725235333_audit_logs__enrollment_id_drop.sql
+│   ├── 20230807200055_users__stripe_customer_id__add.sql
+│   ├── 20230807222115_stripe_checkout_sessions__create.sql
+│   ├── 20230815184404_authn_providers_sequence__setval.sql
+│   ├── 20230818165900_stripe_checkout_sessions__foreign_key_constraints__drop.sql
+│   ├── 20230821201957_pl_courses__enrollment_limits__add.sql
+│   ├── 20230826041147_sharing_sets__create.sql
+│   ├── 20230830221243_course_instance_access_rules__institution__drop_default.sql
+│   ├── 20230913180450_pl_courses__created_at__add.sql
+│   ├── 20230913181816_pl_courses__created_at__backfill.mts
+│   ├── 20230920200348_questions__shared_publicly__add.sql
+│   ├── 20230922173830_pl_courses__created_at__backfill__finalize.mts
+│   ├── 20230922173839_pl_courses__created_at__set_not_null.sql
+│   ├── 20230922214925_user_sessions__create.sql
+│   ├── 20231003211522_lti13_instance__create.sql
+│   ├── 20231013150413__rubric_items__always_show_to_students.sql
+│   ├── 20231031163354_client_fingerprints__create.sql
+│   ├── 20231101173307_rubric_items__number__change_type.sql
+│   ├── 20231116005437_drop_mongodb_columns.sql
+│   ├── 20231116100000_lti13_users__create.sql
+│   ├── 20231121232108_user_sessions__revoked_at__add.sql
+│   ├── 20231121232751_pl_sessions__drop.sql
+│   ├── 20231122001358_variants__broken_at__add.sql
+│   ├── 20231122001903_variants__broken_at__backfill.mts
+│   ├── 20231127180117_variants__broken_by__add.sql
+│   ├── 20231128190800_variants__broken_at__backfill__finalize.mts
+│   ├── 20231129194831_group_users__group_config_id__add.sql
+│   ├── 20231201011351_variants__client_fingerprint_id__add.sql
+│   ├── 20231201225127_client_fingerprints__recreate.sql
+│   ├── 20231223101924_assessment_question_role_permissions__drop_index.sql
+│   ├── 20231227114715__group_user_roles__foreign_key_group_users.sql
+│   ├── 20240104213403_saml_providers__add_additional_config.sql
+│   ├── 20240108185602_group_users__group_config_id__backfill.mts
+│   ├── 20240111004522_group_users__group_config_id__backfill__finalize.mts
+│   ├── 20240111005800_group_users__group_config_id__not_null.sql
+│   ├── 20240111010531_groups__group_config_id__not_null.sql
+│   ├── 20240119195835_pl_courses__path__not_null.sql
+│   ├── 20240123213531_group_user_roles__cascade_deletes.sql
+│   ├── 20240126125616_group_roles__can_assign_roles__add.sql
+│   ├── 20240131102102_group_roles__can_assign_roles__backfill.sql
+│   ├── 20240131192701_group_logs__roles__add.sql
+│   ├── 20240206175554_users__drop_scheduler_columns.sql
+│   ├── 20240207192305_group_roles__can_assign_roles_at_start__drop.sql
+│   ├── 20240228215619_users__terms_accepted_at__add.sql
+│   ├── 20240301223248_course_requests__not_null.sql
+│   ├── 20240307213407_course_requests__referral_source__add.sql
+│   ├── 20240308203938_workspaces__disk_usage__add.sql
+│   ├── 20240314215234_pt_sessions__date__add.sql
+│   ├── 20240314220452_pt_reservations__checked_in__add.sql
+│   ├── 20240319210325_users__email__add.sql
+│   ├── 20240319211022_saml_providers__email_attribute__add.sql
+│   ├── 20240320000007_workspaces__disk_usage_bytes__backfill.mts
+│   ├── 20240320164022_lti13_instances__email_attribute__add.sql
+│   ├── 20240320175536_enum_role__drop.sql
+│   ├── 20240325150316_assessment_questions__median_question_score__add.sql
+│   ├── 20240415170055_institution_administrators__create.sql
+│   ├── 20240501185744_questions__shared_publicly_source__add.sql
+│   ├── 20240523170432_flag_implicit_tags_topics_sets_modules.sql
+│   ├── 20240523183853_sync_courses_for_implicit_flag.ts
+│   ├── 20240527180528_questions__shared_publicly__add_index.sql
+│   ├── 20240603160336_vector_store.sql
+│   ├── 20240604185719_pl_courses__announcement__add.sql
+│   ├── 20240605165348_assessment_sets__not_null_constraints__add.sql
+│   ├── 20240611160107_assessment_access_rules__number__not_null.sql
+│   ├── 20240614101300_lti13_course_instances__create.sql
+│   ├── 20240712152823_lti13_course_instances__add_lineitems.sql
+│   ├── 20240718221554_enum_mode_reason__create.sql
+│   ├── 20240809202119_assessments__allow_personal_notes__add.sql
+│   ├── 20240821103235_query_runs__sql__nullable.sql
+│   ├── 20240830185501_lti13_course_instances__context_memberships_url__add.sql
+│   ├── 20240911213026_submission_embedding_store.sql
+│   ├── 20240912174800_assessments__share_source_publicly__add.sql
+│   ├── 20240926175811_feature_grants__enabled__add.sql
+│   ├── 20240927164524_sharing_sets__description__add.sql
+│   ├── 20241007203121_draft_questions.sql
+│   ├── 20241012150034_questions__shared_publicly_with_source__drop.sql
+│   ├── 20241018170351_questions__share_publicly__add.sql
+│   ├── 20241018171312_questions__share_publicly_backfill.ts
+│   ├── 20241029204638_questions__share_publicly_backfill__finalize.ts
+│   ├── 20241216210909_feature_grants__add_constraints.sql
+│   ├── 20241217215954_manual_draft_edits.sql
+│   ├── 20241219173221_course_instances__ps_linked__drop.sql
+│   ├── 20241231163248_group_users__delete_duplicate_users.sql
+│   ├── 20241231163348_group_users__group_config_user__unique.sql
+│   ├── 20250117000347_variants__variant_seed_nonnull.sql
+│   ├── 20250121220027_pl_courses__show_getting_started__add.sql
+│   ├── 20250204232139_course_instance_usages__create.sql
+│   ├── 20250206202509_variants__authn_user_id__nonnull.sql
+│   ├── 20250210225102_tags__not_null_constraints__add.sql
+│   ├── 20250210225433_topics__not_null_constraints__add.sql
+│   ├── 20250211000848_assessment_modules__heading__nonnull.sql
+│   ├── 20250212010945_variants__authn_user_id__backfill.ts
+│   ├── 20250212011728_variants__authn_user_id__backfill__finalize.ts
+│   ├── 20250212012249_variants__authn_user_id__nonnull.sql
+│   ├── 20250213014138_variants__authn_user_id__nonnull_constraint_add.sql
+│   ├── 20250213014139_variants__authn_user_id__nonnull_constraint_validate.sql
+│   ├── 20250214035153_course_instance_usages__submissions__backfill.ts
+│   ├── 20250214171608_course_instance_usages__external_grading_jobs__backfill.ts
+│   ├── 20250215015626_course_instance_usages__workspaces__backfill.ts
+│   ├── 20250216204857_is_ai_graded_columns.sql
+│   ├── 20250223235117_ai_grading_prompts.sql
+│   ├── 20250226004222_course_instance_usages__submissions__backfill_v2.ts
+│   ├── 20250318174636_course_instance_usages__submissions__backfill_v3.ts
+│   ├── 20250318175247_course_instance_usages__external_grading_jobs__backfill_v3.ts
+│   ├── 20250318180548_course_instance_usages__workspaces__backfill_v3.ts
+│   ├── 20250325214519_json_grade_rate_minutes__add.sql
+│   ├── 20250401213217_share_publicly__idx.sql
+│   ├── 20250401221009_shared_publicly__drop.sql
+│   ├── 20250407170620_json_group_roles__add.sql
+│   └── README.md
+├── models
+│   ├── assessment-question.sql
+│   ├── assessment-question.ts
+│   ├── assessment-set.sql
+│   ├── assessment-set.ts
+│   ├── assessment.sql
+│   ├── assessment.ts
+│   ├── audit-log.sql
+│   ├── audit-log.ts
+│   ├── course-instances.sql
+│   ├── course-instances.ts
+│   ├── course-instance-usages.sql
+│   ├── course-instance-usages.ts
+│   ├── course-permissions.sql
+│   ├── course-permissions.ts
+│   ├── course.sql
+│   ├── course.ts
+│   ├── enrollment.sql
+│   ├── enrollment.ts
+│   ├── grading-job.sql
+│   ├── grading-job.ts
+│   ├── institution.sql
+│   ├── institution.ts
+│   ├── question.sql
+│   ├── questions.sql
+│   ├── questions.ts
+│   ├── question.ts
+│   ├── tags.sql
+│   ├── tags.ts
+│   ├── topics.sql
+│   ├── topics.ts
+│   ├── user.sql
+│   ├── user.ts
+│   ├── variant.sql
+│   ├── variant.ts
+│   ├── workspace.sql
+│   └── workspace.ts
+├── news_items
+│   ├── 001_new_page_layout
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 002_in_browser_editing
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 003_course_instance_order
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 004_freq_testing_paper
+│   │   ├── exam_schedule.png
+│   │   ├── exam_score_dist.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 005_fractions_and_input_changes
+│   │   ├── approx_pi.png
+│   │   ├── clown_input.png
+│   │   ├── full_height_input.png
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── invalid_input.png
+│   │   ├── missing_input.png
+│   │   └── why_btn.png
+│   ├── 006_manual_feedback
+│   │   ├── csv_for_grading.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 007_markdown_live_preview
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── markdown_preview.png
+│   ├── 008_honor_code
+│   │   ├── honor_code.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 009_unsaved_changes_warning
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── prompt.png
+│   ├── 010_external_grader_invalid_attempts
+│   │   ├── errors.png
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── invalid.png
+│   ├── 011_remaining_time_end_date
+│   │   ├── exam_timer.svg
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 012_python_autograder
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── plot_grading.png
+│   │   └── variable_description.png
+│   ├── 013_overlay_element
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── map.png
+│   ├── 014_nested_questions
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── nested.png
+│   │   └── questions.png
+│   ├── 015_dropdown_element
+│   │   ├── dropdown.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 016_page_titles
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── pages_with_titles.png
+│   ├── 017_workspaces
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── jupyter.png
+│   │   ├── vscode.png
+│   │   └── xterm.png
+│   ├── 018_group_work
+│   │   ├── group_assignment.png
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── student_start_assessment.png
+│   ├── 019_robust_sync
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 020_ecr_image_cache
+│   │   ├── images_sync.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 021_c_grader
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 022_python38
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 023_json_schema_comment
+│   │   ├── comment.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 024_change_time_limit
+│   │   ├── changeButtonAll.png
+│   │   ├── changeOneStudent.png
+│   │   ├── editButton.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 025_grade_rate
+│   │   ├── gradeBlocked.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 026_direct_link
+│   │   ├── assessmentSettings.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 027_order_block_element
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── pl-order-blocks-code.png
+│   │   └── pl-order-blocks.png
+│   ├── 028_java_grader
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 029_non_active
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── non-active-exam.png
+│   ├── 030_gradebook_students_ui
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 031_workspace_no_internet
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 032_proof_blocks
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── ProofBlocks-demo.gif
+│   ├── 033_course_permissions
+│   │   ├── allow_access_ignored.png
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── staff.png
+│   │   └── ta_access_control.png
+│   ├── 034_matching_element
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── pl-matching.png
+│   ├── 035_desktop_workspace
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── workspace.png
+│   ├── 036_sequential_questions
+│   │   ├── example1a.png
+│   │   ├── example1b.png
+│   │   ├── example1c.png
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 037_feedback_view
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   └── manualGradingFeedback.png
+│   ├── 038_organize_by_module
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── module-example.png
+│   │   └── moduleExample.png
+│   ├── 039_c_grader_security
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 040_manual_grading_ui
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 041_element_question_writing
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── pl-big-o-correct.png
+│   │   ├── pl-big-o-incorrect.png
+│   │   ├── pl-big-o-question.png
+│   │   ├── pl-dataframe.png
+│   │   ├── pl-graph.png
+│   │   ├── pl-hidden-hints.png
+│   │   └── pl-python-variable.png
+│   ├── 042_workspace_dynamic
+│   │   ├── index.html
+│   │   └── info.json
+│   ├── 043_units_element
+│   │   ├── index.html
+│   │   ├── info.json
+│   │   ├── pl-units-input-correct-2.png
+│   │   ├── pl-units-input-correct.png
+│   │   ├── pl-units-input-incorrect.png
+│   │   └── pl-units-input.png
+│   └── index.ts
+├── pages
+│   ├── administratorAdmins
+│   │   ├── administratorAdmins.html.ts
+│   │   ├── administratorAdmins.sql
+│   │   └── administratorAdmins.ts
+│   ├── administratorBatchedMigrations
+│   │   ├── administratorBatchedMigrations.html.ts
+│   │   └── administratorBatchedMigrations.ts
+│   ├── administratorCourseRequests
+│   │   ├── administratorCourseRequests.html.ts
+│   │   └── administratorCourseRequests.ts
+│   ├── administratorCourses
+│   │   ├── administratorCourses.html.ts
+│   │   ├── administratorCourses.sql
+│   │   └── administratorCourses.ts
+│   ├── administratorFeatures
+│   │   ├── administratorFeatures.html.ts
+│   │   ├── administratorFeatures.sql
+│   │   └── administratorFeatures.ts
+│   ├── administratorInstitutions
+│   │   ├── administratorInstitutions.html.ts
+│   │   ├── administratorInstitutions.sql
+│   │   └── administratorInstitutions.ts
+│   ├── administratorNetworks
+│   │   ├── administratorNetworks.html.ts
+│   │   ├── administratorNetworks.sql
+│   │   └── administratorNetworks.ts
+│   ├── administratorQueries
+│   │   ├── administratorQueries.html.ts
+│   │   └── administratorQueries.ts
+│   ├── administratorQuery
+│   │   ├── administratorQuery.html.ts
+│   │   ├── administratorQuery.sql
+│   │   └── administratorQuery.ts
+│   ├── administratorSettings
+│   │   ├── administratorSettings.html.ts
+│   │   └── administratorSettings.ts
+│   ├── administratorWorkspaces
+│   │   ├── administratorWorkspaces.html.ts
+│   │   ├── administratorWorkspaces.sql
+│   │   └── administratorWorkspaces.ts
+│   ├── authCallbackLti
+│   │   ├── authCallbackLti.sql
+│   │   └── authCallbackLti.ts
+│   ├── authCallbackOAuth2
+│   │   └── authCallbackOAuth2.ts
+│   ├── authCallbackShib
+│   │   └── authCallbackShib.ts
+│   ├── authLogin
+│   │   ├── authLogin.html.ts
+│   │   ├── authLogin.sql
+│   │   └── authLogin.ts
+│   ├── authLoginDev
+│   │   └── authLoginDev.ts
+│   ├── authLoginOAuth2
+│   │   └── authLoginOAuth2.ts
+│   ├── authLogout
+│   │   └── authLogout.ts
+│   ├── authPassword
+│   │   ├── authPassword.html.ts
+│   │   └── authPassword.ts
+│   ├── clientFilesAssessment
+│   │   └── clientFilesAssessment.ts
+│   ├── clientFilesCourse
+│   │   └── clientFilesCourse.ts
+│   ├── clientFilesCourseInstance
+│   │   └── clientFilesCourseInstance.ts
+│   ├── clientFilesQuestion
+│   │   └── clientFilesQuestion.ts
+│   ├── courseSyncs
+│   │   ├── courseSyncs.html.ts
+│   │   ├── courseSyncs.sql
+│   │   └── courseSyncs.ts
+│   ├── editError
+│   │   ├── editError.html.ts
+│   │   └── editError.ts
+│   ├── elementExtensionFiles
+│   │   └── elementExtensionFiles.ts
+│   ├── elementFiles
+│   │   ├── elementFiles.sql
+│   │   └── elementFiles.ts
+│   ├── enroll
+│   │   ├── enroll.html.ts
+│   │   ├── enroll.sql
+│   │   └── enroll.ts
+│   ├── error
+│   │   ├── error.html.ts
+│   │   └── error.ts
+│   ├── generatedFilesQuestion
+│   │   └── generatedFilesQuestion.ts
+│   ├── home
+│   │   ├── home.html.ts
+│   │   ├── home.sql
+│   │   └── home.ts
+│   ├── instructorAssessmentAccess
+│   │   ├── instructorAssessmentAccess.html.ts
+│   │   ├── instructorAssessmentAccess.sql
+│   │   └── instructorAssessmentAccess.ts
+│   ├── instructorAssessmentDownloads
+│   │   ├── instructorAssessmentDownloads.html.ts
+│   │   ├── instructorAssessmentDownloads.sql
+│   │   └── instructorAssessmentDownloads.ts
+│   ├── instructorAssessmentGroups
+│   │   ├── instructorAssessmentGroups.html.ts
+│   │   ├── instructorAssessmentGroups.sql
+│   │   └── instructorAssessmentGroups.ts
+│   ├── instructorAssessmentInstance
+│   │   ├── instructorAssessmentInstance.html.ts
+│   │   ├── instructorAssessmentInstance.sql
+│   │   └── instructorAssessmentInstance.ts
+│   ├── instructorAssessmentInstances
+│   │   ├── instructorAssessmentInstances.html.ts
+│   │   ├── instructorAssessmentInstances.sql
+│   │   ├── instructorAssessmentInstances.ts
+│   │   └── instructorAssessmentInstances.types.ts
+│   ├── instructorAssessmentManualGrading
+│   │   ├── assessment
+│   │   ├── assessmentQuestion
+│   │   └── instanceQuestion
+│   ├── instructorAssessmentQuestions
+│   │   ├── instructorAssessmentQuestions.html.ts
+│   │   ├── instructorAssessmentQuestions.sql
+│   │   └── instructorAssessmentQuestions.ts
+│   ├── instructorAssessmentQuestionStatistics
+│   │   ├── instructorAssessmentQuestionStatistics.html.ts
+│   │   ├── instructorAssessmentQuestionStatistics.sql
+│   │   └── instructorAssessmentQuestionStatistics.ts
+│   ├── instructorAssessmentRegrading
+│   │   ├── instructorAssessmentRegrading.html.ts
+│   │   ├── instructorAssessmentRegrading.sql
+│   │   └── instructorAssessmentRegrading.ts
+│   ├── instructorAssessments
+│   │   ├── instructorAssessments.html.ts
+│   │   ├── instructorAssessments.sql
+│   │   ├── instructorAssessments.ts
+│   │   └── instructorAssessments.types.ts
+│   ├── instructorAssessmentSettings
+│   │   ├── instructorAssessmentSettings.html.ts
+│   │   ├── instructorAssessmentSettings.sql
+│   │   └── instructorAssessmentSettings.ts
+│   ├── instructorAssessmentStatistics
+│   │   ├── instructorAssessmentStatistics.html.ts
+│   │   ├── instructorAssessmentStatistics.sql
+│   │   └── instructorAssessmentStatistics.ts
+│   ├── instructorAssessmentUploads
+│   │   ├── instructorAssessmentUploads.html.ts
+│   │   ├── instructorAssessmentUploads.sql
+│   │   └── instructorAssessmentUploads.ts
+│   ├── instructorCopyPublicQuestion
+│   │   ├── instructorCopyPublicQuestion.sql
+│   │   └── instructorCopyPublicQuestion.ts
+│   ├── instructorCourseAdmin
+│   │   └── instructorCourseAdmin.ts
+│   ├── instructorCourseAdminGettingStarted
+│   │   ├── instructorCourseAdminGettingStarted.html.ts
+│   │   └── instructorCourseAdminGettingStarted.ts
+│   ├── instructorCourseAdminInstances
+│   │   ├── instructorCourseAdminInstances.html.ts
+│   │   ├── instructorCourseAdminInstances.sql
+│   │   └── instructorCourseAdminInstances.ts
+│   ├── instructorCourseAdminModules
+│   │   ├── instructorCourseAdminModules.html.ts
+│   │   ├── instructorCourseAdminModules.sql
+│   │   └── instructorCourseAdminModules.ts
+│   ├── instructorCourseAdminSets
+│   │   ├── instructorCourseAdminSets.html.ts
+│   │   ├── instructorCourseAdminSets.sql
+│   │   └── instructorCourseAdminSets.ts
+│   ├── instructorCourseAdminSettings
+│   │   ├── instructorCourseAdminSettings.html.ts
+│   │   └── instructorCourseAdminSettings.ts
+│   ├── instructorCourseAdminSharing
+│   │   ├── instructorCourseAdminSharing.html.ts
+│   │   ├── instructorCourseAdminSharing.sql
+│   │   └── instructorCourseAdminSharing.ts
+│   ├── instructorCourseAdminStaff
+│   │   ├── instructorCourseAdminStaff.html.ts
+│   │   ├── instructorCourseAdminStaff.sql
+│   │   └── instructorCourseAdminStaff.ts
+│   ├── instructorCourseAdminTags
+│   │   ├── instructorCourseAdminTags.html.ts
+│   │   └── instructorCourseAdminTags.ts
+│   ├── instructorCourseAdminTopics
+│   │   ├── instructorCourseAdminTopics.html.ts
+│   │   └── instructorCourseAdminTopics.ts
+│   ├── instructorEffectiveUser
+│   │   ├── instructorEffectiveUser.html.ts
+│   │   ├── instructorEffectiveUser.sql
+│   │   └── instructorEffectiveUser.ts
+│   ├── instructorFileBrowser
+│   │   └── instructorFileBrowser.ts
+│   ├── instructorFileDownload
+│   │   └── instructorFileDownload.ts
+│   ├── instructorFileEditor
+│   │   ├── instructorFileEditor.html.ts
+│   │   ├── instructorFileEditor.sql
+│   │   └── instructorFileEditor.ts
+│   ├── instructorFileTransfer
+│   │   ├── instructorFileTransfer.sql
+│   │   └── instructorFileTransfer.ts
+│   ├── instructorGradebook
+│   │   ├── instructorGradebook.html.ts
+│   │   ├── instructorGradebook.sql
+│   │   ├── instructorGradebook.ts
+│   │   └── instructorGradebook.types.ts
+│   ├── instructorGradingJob
+│   │   ├── instructorGradingJob.html.ts
+│   │   ├── instructorGradingJob.sql
+│   │   └── instructorGradingJob.ts
+│   ├── instructorInstanceAdminAccess
+│   │   ├── instructorInstanceAdminAccess.html.ts
+│   │   ├── instructorInstanceAdminAccess.sql
+│   │   └── instructorInstanceAdminAccess.ts
+│   ├── instructorInstanceAdminLti
+│   │   ├── instructorInstanceAdminLti.html.ts
+│   │   ├── instructorInstanceAdminLti.sql
+│   │   └── instructorInstanceAdminLti.ts
+│   ├── instructorInstanceAdminSettings
+│   │   ├── instructorInstanceAdminSettings.html.ts
+│   │   ├── instructorInstanceAdminSettings.sql
+│   │   └── instructorInstanceAdminSettings.ts
+│   ├── instructorIssues
+│   │   ├── instructorIssues.html.ts
+│   │   ├── instructorIssues.sql
+│   │   └── instructorIssues.ts
+│   ├── instructorLoadFromDisk
+│   │   ├── instructorLoadFromDisk.sql
+│   │   └── instructorLoadFromDisk.ts
+│   ├── instructorQuestionPreview
+│   │   ├── instructorQuestionPreview.html.ts
+│   │   └── instructorQuestionPreview.ts
+│   ├── instructorQuestions
+│   │   ├── instructorQuestions.html.ts
+│   │   └── instructorQuestions.ts
+│   ├── instructorQuestionSettings
+│   │   ├── instructorQuestionSettings.html.ts
+│   │   ├── instructorQuestionSettings.sql
+│   │   └── instructorQuestionSettings.ts
+│   ├── instructorQuestionStatistics
+│   │   ├── instructorQuestionStatistics.html.ts
+│   │   ├── instructorQuestionStatistics.sql
+│   │   └── instructorQuestionStatistics.ts
+│   ├── instructorRequestCourse
+│   │   ├── instructorRequestCourse.html.ts
+│   │   ├── instructorRequestCourse.sql
+│   │   └── instructorRequestCourse.ts
+│   ├── jobSequence
+│   │   ├── jobSequence.html.ts
+│   │   └── jobSequence.ts
+│   ├── legacyQuestionFile
+│   │   ├── legacyQuestionFile.sql
+│   │   └── legacyQuestionFile.ts
+│   ├── legacyQuestionText
+│   │   └── legacyQuestionText.ts
+│   ├── navbarCourseInstanceSwitcher
+│   │   ├── navbarCourseInstanceSwitcher.html.ts
+│   │   └── navbarCourseInstanceSwitcher.ts
+│   ├── navbarCourseSwitcher
+│   │   ├── navbarCourseSwitcher.html.ts
+│   │   └── navbarCourseSwitcher.ts
+│   ├── newsItem
+│   │   ├── newsItem.html.ts
+│   │   ├── newsItem.sql
+│   │   └── newsItem.ts
+│   ├── newsItems
+│   │   ├── newsItems.html.ts
+│   │   ├── newsItems.sql
+│   │   └── newsItems.ts
+│   ├── publicAssessmentQuestions
+│   │   ├── publicAssessmentQuestions.html.ts
+│   │   ├── publicAssessmentQuestions.sql
+│   │   └── publicAssessmentQuestions.ts
+│   ├── publicQuestionFileBrowser
+│   │   └── publicQuestionFileBrowser.ts
+│   ├── publicQuestionFileDownload
+│   │   └── publicQuestionFileDownload.ts
+│   ├── publicQuestionPreview
+│   │   ├── publicQuestionPreview.html.ts
+│   │   └── publicQuestionPreview.ts
+│   ├── publicQuestions
+│   │   ├── publicQuestions.html.ts
+│   │   └── publicQuestions.ts
+│   ├── shared
+│   │   ├── assessmentStatDescriptions.ts
+│   │   └── syncHelpers.ts
+│   ├── sideNavSettings
+│   │   └── sideNavSettings.ts
+│   ├── studentAssessment
+│   │   ├── studentAssessment.html.ts
+│   │   └── studentAssessment.ts
+│   ├── studentAssessmentInstance
+│   │   ├── studentAssessmentInstance.html.ts
+│   │   ├── studentAssessmentInstance.sql
+│   │   └── studentAssessmentInstance.ts
+│   ├── studentAssessmentInstanceFile
+│   │   ├── studentAssessmentInstanceFile.sql
+│   │   └── studentAssessmentInstanceFile.ts
+│   ├── studentAssessmentInstanceTimeRemaining
+│   │   └── studentAssessmentInstanceTimeRemaining.ts
+│   ├── studentAssessments
+│   │   ├── studentAssessments.html.ts
+│   │   ├── studentAssessments.sql
+│   │   └── studentAssessments.ts
+│   ├── studentGradebook
+│   │   ├── studentGradebook.html.ts
+│   │   ├── studentGradebook.sql
+│   │   └── studentGradebook.ts
+│   ├── studentInstanceQuestion
+│   │   ├── studentInstanceQuestion.html.ts
+│   │   ├── studentInstanceQuestion.sql
+│   │   └── studentInstanceQuestion.ts
+│   ├── submissionFile
+│   │   ├── submissionFile.sql
+│   │   └── submissionFile.ts
+│   ├── userSettings
+│   │   ├── userSettings.html.ts
+│   │   ├── userSettings.sql
+│   │   └── userSettings.ts
+│   ├── workspace
+│   │   ├── workspace.html.ts
+│   │   ├── workspace.sql
+│   │   └── workspace.ts
+│   └── workspaceLogs
+│       ├── workspaceLogs.html.ts
+│       ├── workspaceLogs.sql
+│       └── workspaceLogs.ts
+├── project_structure.txt
+├── question-servers
+│   ├── calculation-subprocess.js
+│   ├── calculation-worker.js
+│   ├── freeform.js
+│   ├── index.ts
+│   └── types.ts
+├── schemas
+│   ├── adminQuery.ts
+│   ├── comment.ts
+│   ├── index.ts
+│   ├── infoAssessment.ts
+│   ├── infoCourseInstance.ts
+│   ├── infoCourse.ts
+│   ├── infoElementCore.ts
+│   ├── infoElementCourse.ts
+│   ├── infoElementExtension.ts
+│   ├── infoNewsItem.ts
+│   ├── infoQuestion.ts
+│   ├── jsonSchemas.ts
+│   ├── questionOptionsCalculation.ts
+│   ├── questionOptionsCheckbox.ts
+│   ├── questionOptionsFile.ts
+│   ├── questionOptionsMultipleChoice.ts
+│   ├── questionOptionsMultipleTrueFalse.ts
+│   ├── questionOptions.ts
+│   ├── questionOptionsv3.ts
+│   └── schemas
+│       ├── infoAssessment.json
+│       ├── infoCourseInstance.json
+│       ├── infoCourse.json
+│       ├── infoElementCore.json
+│       ├── infoElementCourse.json
+│       ├── infoElementExtension.json
+│       ├── infoNewsItem.json
+│       ├── infoQuestion.json
+│       ├── questionOptionsCalculation.json
+│       ├── questionOptionsCheckbox.json
+│       ├── questionOptionsFile.json
+│       ├── questionOptionsMultipleChoice.json
+│       ├── questionOptionsMultipleTrueFalse.json
+│       ├── questionOptionsv3.json
+│       └── README.md
+├── server.ts
+├── sprocs
+│   ├── admin_assessment_question_number.sql
+│   ├── administrators_delete_by_user_id.sql
+│   ├── administrators_insert_by_user_uid.sql
+│   ├── array_and_number.sql
+│   ├── array_avg.sql
+│   ├── array_histogram.sql
+│   ├── array_increments_above_max.sql
+│   ├── array_var.sql
+│   ├── assessment_instance_label.sql
+│   ├── assessment_instances_grade.sql
+│   ├── assessment_instances_points.sql
+│   ├── assessment_label.sql
+│   ├── assessments_format_for_question.sql
+│   ├── assessments_format.sql
+│   ├── authz_assessment_instance.sql
+│   ├── authz_assessment.sql
+│   ├── authz_course_instance.sql
+│   ├── authz_course.sql
+│   ├── check_assessment_access_rule.sql
+│   ├── check_assessment_access.sql
+│   ├── check_course_instance_access_rule.sql
+│   ├── check_course_instance_access.sql
+│   ├── courses_update_column.sql
+│   ├── format_date_full_compact.sql
+│   ├── format_date_full.sql
+│   ├── format_date_iso8601.sql
+│   ├── format_date_short.sql
+│   ├── format_interval_short.sql
+│   ├── format_interval.sql
+│   ├── grader_loads_current.sql
+│   ├── grading_jobs_lock.sql
+│   ├── grading_jobs_stats_day.sql
+│   ├── grading_jobs_update_after_grading.sql
+│   ├── group_info.sql
+│   ├── groups_uid_list.sql
+│   ├── histogram.sql
+│   ├── index.ts
+│   ├── input_date.sql
+│   ├── instance_questions_calculate_stats.sql
+│   ├── instance_questions_grade.sql
+│   ├── instance_questions_next_allowed_grade.sql
+│   ├── instance_questions_points_exam.sql
+│   ├── instance_questions_points_homework.sql
+│   ├── instance_questions_points.sql
+│   ├── interval_hist_thresholds.sql
+│   ├── ip_to_mode.sql
+│   ├── issues_insert_for_variant.sql
+│   ├── jsonb_array_to_double_precision_array.sql
+│   ├── jsonb_array_to_text_array.sql
+│   ├── question_order.sql
+│   ├── random_unique.sql
+│   ├── scores_to_points_array.sql
+│   ├── server_loads_current.sql
+│   ├── server_usage_current.sql
+│   ├── submissions_lock.sql
+│   ├── sync_assessments.sql
+│   ├── sync_course_instances.sql
+│   ├── sync_news_items.sql
+│   ├── sync_questions.sql
+│   ├── sync_question_tags.sql
+│   ├── tags_for_question.sql
+│   ├── users_are_instructors_in_any_course.sql
+│   ├── users_get_displayed_role.sql
+│   ├── users_is_instructor_in_course_instance.sql
+│   ├── users_is_instructor_in_course.sql
+│   ├── users_select_or_insert_and_enroll_lti.sql
+│   ├── users_select_or_insert.sql
+│   ├── variants_lock.sql
+│   ├── variants_update_after_grading.sql
+│   └── workspace_loads_current.sql
+├── sync
+│   ├── course-db.ts
+│   ├── dates.ts
+│   ├── fromDisk
+│   │   ├── assessmentModules.sql
+│   │   ├── assessmentModules.ts
+│   │   ├── assessmentSets.sql
+│   │   ├── assessmentSets.ts
+│   │   ├── assessments.sql
+│   │   ├── assessments.ts
+│   │   ├── courseInfo.sql
+│   │   ├── courseInfo.ts
+│   │   ├── courseInstances.sql
+│   │   ├── courseInstances.ts
+│   │   ├── entity-list.test.ts
+│   │   ├── entity-list.ts
+│   │   ├── questions.ts
+│   │   ├── sharing.sql
+│   │   ├── sharing.ts
+│   │   ├── tags.sql
+│   │   ├── tags.ts
+│   │   ├── topics.sql
+│   │   └── topics.ts
+│   ├── infofile.ts
+│   ├── question.ts
+│   ├── sharing.sql
+│   ├── sharing.ts
+│   └── syncFromDisk.ts
+├── tests
+│   ├── accessAsStudent.test.sql
+│   ├── accessAsStudent.test.ts
+│   ├── accessibility
+│   │   ├── bootstrap4-construct-plugin.ts
+│   │   └── index.test.ts
+│   ├── access.test.sql
+│   ├── access.test.ts
+│   ├── activeAccessRestriction.test.sql
+│   ├── activeAccessRestriction.test.ts
+│   ├── administratorQueries.test.ts
+│   ├── administrator.test.ts
+│   ├── api.test.ts
+│   ├── assets.test.ts
+│   ├── bonusPoints.test.sql
+│   ├── bonusPoints.test.ts
+│   ├── chunkAssessment.test.sql
+│   ├── chunkAssessment.test.ts
+│   ├── chunks.test.sql
+│   ├── chunks.test.ts
+│   ├── clientFiles.test.ts
+│   ├── courseEditor.test.sql
+│   ├── courseEditor.test.ts
+│   ├── courseElementExtension.test.sql
+│   ├── courseElementExtension.test.ts
+│   ├── cron.test.sql
+│   ├── cron.test.ts
+│   ├── database.test.sql
+│   ├── database.test.ts
+│   ├── editorUtil.test.ts
+│   ├── enroll.test.ts
+│   ├── exampleCourseQuestions.test.ts
+│   ├── exam.test.sql
+│   ├── exam.test.ts
+│   ├── features.test.ts
+│   ├── fileEditor.test.sql
+│   ├── fileEditor.test.ts
+│   ├── getHomepage.test.ts
+│   ├── gradeRate.test.sql
+│   ├── gradeRate.test.ts
+│   ├── gradingMethods.test.sql
+│   ├── gradingMethods.test.ts
+│   ├── groupExamRolePermissions.test.sql
+│   ├── groupExamRolePermissions.test.ts
+│   ├── groupExam.test.sql
+│   ├── groupExam.test.ts
+│   ├── groupGenerateAndDelete.test.sql
+│   ├── groupGenerateAndDelete.test.ts
+│   ├── groupRolePermissions.test.sql
+│   ├── groupRolePermissions.test.ts
+│   ├── groupRole.test.sql
+│   ├── groupRole.test.ts
+│   ├── groupScoreAndSync.test.sql
+│   ├── groupScoreAndSync.test.ts
+│   ├── groupStudent.test.sql
+│   ├── groupStudent.test.ts
+│   ├── helperAttachFiles.sql
+│   ├── helperAttachFiles.ts
+│   ├── helperClient.ts
+│   ├── helperCourse.ts
+│   ├── helperDb.ts
+│   ├── helperExam.sql
+│   ├── helperExam.ts
+│   ├── helperQuestionPreview.sql
+│   ├── helperQuestionPreview.ts
+│   ├── helperQuestion.sql
+│   ├── helperQuestion.ts
+│   ├── helperServer.sql
+│   ├── helperServer.ts
+│   ├── homework.test.sql
+│   ├── homework.test.ts
+│   ├── honorCode.test.sql
+│   ├── honorCode.test.ts
+│   ├── instructorAssessmentDownloads.test.ts
+│   ├── instructorAssessmentGroups.test.sql
+│   ├── instructorAssessmentGroups.test.ts
+│   ├── instructorAssessmentSettings.test.sql
+│   ├── instructorAssessmentSettings.test.ts
+│   ├── instructorAssessments.test.sql
+│   ├── instructorAssessments.test.ts
+│   ├── instructorAssessment.test.ts
+│   ├── instructorBreakVariants.test.sql
+│   ├── instructorBreakVariants.test.ts
+│   ├── instructorCourseAdminInstances.test.sql
+│   ├── instructorCourseAdminInstances.test.ts
+│   ├── instructorCourseAdminSettings.test.sql
+│   ├── instructorCourseAdminSettings.test.ts
+│   ├── instructorInstanceAdminSettings.test.sql
+│   ├── instructorInstanceAdminSettings.test.ts
+│   ├── instructorQuestionsCreation.test.sql
+│   ├── instructorQuestionsCreation.test.ts
+│   ├── instructorQuestionSettings.test.sql
+│   ├── instructorQuestionSettings.test.ts
+│   ├── instructorQuestions.test.sql
+│   ├── instructorQuestions.test.ts
+│   ├── issues.test.sql
+│   ├── issues.test.ts
+│   ├── jsonLoad.test.ts
+│   ├── lti13.test.ts
+│   ├── lti.test.sql
+│   ├── lti.test.ts
+│   ├── manualGrading.test.sql
+│   ├── manualGrading.test.ts
+│   ├── mocha-hooks.ts
+│   ├── mockLogger.ts
+│   ├── newsItems.test.sql
+│   ├── newsItems.test.ts
+│   ├── permissions
+│   │   ├── courseAdminAccess.test.sql
+│   │   ├── courseAdminAccess.test.ts
+│   │   ├── effectiveUser.test.sql
+│   │   ├── effectiveUser.test.ts
+│   │   ├── institutionAdminAccess.test.ts
+│   │   ├── studentData.test.sql
+│   │   └── studentData.test.ts
+│   ├── questionSharing.test.sql
+│   ├── questionSharing.test.ts
+│   ├── realTimeGradingDisabled.test.sql
+│   ├── realTimeGradingDisabled.test.ts
+│   ├── redirects.test.ts
+│   ├── schemas.test.ts
+│   ├── serverJobs.test.ts
+│   ├── sharedQuestionPreview.test.sql
+│   ├── sharedQuestionPreview.test.ts
+│   ├── showClosedAssessmentScore.test.sql
+│   ├── showClosedAssessmentScore.test.ts
+│   ├── showClosedAssessment.test.sql
+│   ├── showClosedAssessment.test.ts
+│   ├── sprocs
+│   │   ├── check_assessment_access.test.sql
+│   │   ├── check_assessment_access.test.ts
+│   │   ├── check_course_instance_access.test.sql
+│   │   ├── check_course_instance_access.test.ts
+│   │   ├── ip_to_mode.test.sql
+│   │   ├── ip_to_mode.test.ts
+│   │   ├── users_select_or_insert.test.sql
+│   │   └── users_select_or_insert.test.ts
+│   ├── sync
+│   │   ├── assessmentModulesSync.test.ts
+│   │   ├── assessmentSetsSync.test.ts
+│   │   ├── assessmentsSync.test.sql
+│   │   ├── assessmentsSync.test.ts
+│   │   ├── courseDb.test.ts
+│   │   ├── courseInstancesSync.test.ts
+│   │   ├── courseSync.test.ts
+│   │   ├── initialSync.test.ts
+│   │   ├── questionsSync.test.ts
+│   │   ├── tagsTopicsSync.test.ts
+│   │   └── util.ts
+│   ├── testAssessmentOrdering.test.sql
+│   ├── testAssessmentOrdering.test.ts
+│   ├── testCourseQuestions.test.ts
+│   ├── testFileEditor
+│   │   └── courseTemplate
+│   ├── testJsonLoad
+│   │   ├── basic.json
+│   │   ├── broken.json
+│   │   ├── forSchemaInvalid.json
+│   │   └── forSchemaValid.json
+│   ├── testLoadCourse
+│   │   └── brokenCourse
+│   ├── testSequentialQuestions.test.sql
+│   ├── testSequentialQuestions.test.ts
+│   ├── utils
+│   │   ├── auth.ts
+│   │   ├── csrf.ts
+│   │   ├── enrollments.ts
+│   │   └── group.ts
+│   ├── variantAccess.test.ts
+│   ├── workspaceAccess.test.sql
+│   ├── workspaceAccess.test.ts
+│   ├── workspaceDynamicFiles.test.ts
+│   ├── workspaceHost.test.ts
+│   ├── zoneGradingExam.test.sql
+│   ├── zoneGradingExam.test.ts
+│   ├── zoneGradingHomework.test.sql
+│   └── zoneGradingHomework.test.ts
+├── tsconfig.json
+└── webhooks
+    └── terminate.ts
+
+217 directories, 1527 files

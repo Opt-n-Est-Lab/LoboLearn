@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../assets/stylesheets/instructorGradebook.css"],
+  "sourcesContent": [".gradebook-uin {\n  max-width: 10em;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n"],
+  "mappings": "AAAA,CAAC,cACC,UAAW,KACX,SAAU,OACV,cAAe,QACjB",
+  "names": []
+}

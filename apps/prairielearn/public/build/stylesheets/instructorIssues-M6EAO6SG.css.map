@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../assets/stylesheets/instructorIssues.css"],
+  "sourcesContent": [".issue-list-item {\n  padding-left: 32px;\n}\n\n.issue-status-icon {\n  position: absolute;\n  top: 16px;\n  left: 8px;\n}\n"],
+  "mappings": "AAAA,CAAC,gBACC,aAAc,IAChB,CAEA,CAAC,kBACC,SAAU,SACV,IAAK,KACL,KAAM,GACR",
+  "names": []
+}

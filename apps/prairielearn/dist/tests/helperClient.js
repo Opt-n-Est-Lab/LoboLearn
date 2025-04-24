@@ -1,0 +1,163 @@
+import { assert } from 'chai';
+import * as cheerio from 'cheerio';
+import fetch, {} from 'node-fetch';
+import { config } from '../lib/config.js';
+/**
+ * A wrapper around node-fetch that provides a few features:
+ *
+ * - Automatic parsing with cheerio
+ * - A `form` option akin to that from the `request` library
+ *
+ * If desired, you can set cookies via the `cookie` header:
+ * ```
+ * options.headers = {cookie: 'pl2_access_as_administrator=active'};
+ * ```
+ */
+export async function fetchCheerio(url, options = {}) {
+    const response = await fetch(url, options);
+    const text = await response.text();
+    const cheerioResponse = response;
+    cheerioResponse.$ = cheerio.load(text);
+    cheerioResponse.text = () => Promise.resolve(text);
+    return cheerioResponse;
+}
+/**
+ * Gets the test CSRF token from the page.
+ */
+export function getCSRFToken($) {
+    const csrfTokenSpan = $('span#test_csrf_token');
+    assert.lengthOf(csrfTokenSpan, 1);
+    const csrfToken = csrfTokenSpan.text();
+    assert.isString(csrfToken);
+    return csrfToken;
+}
+/**
+ * Utility function that extracts a CSRF token from a `__csrf_token` input
+ * that is a descendent of the `parentSelector`, if one is specified.
+ * The token will also be persisted to `context.__csrf_token`.
+ */
+export function extractAndSaveCSRFToken(context, $, parentSelector = '') {
+    const csrfTokenInput = $(`${parentSelector} input[name="__csrf_token"]`);
+    assert.lengthOf(csrfTokenInput, 1);
+    const csrfToken = csrfTokenInput.val();
+    assert.isString(csrfToken);
+    context.__csrf_token = csrfToken;
+    return csrfToken;
+}
+/**
+ * Utility function that extracts a CSRF token from a `__csrf_token` input
+ * that is inside the `data-bs-content` attribute of the parentSelector.
+ * The token will also be persisted to `context.__csrf_token`.
+ */
+export function extractAndSaveCSRFTokenFromDataContent(context, $, parentSelector) {
+    const parent = $(parentSelector);
+    assert.lengthOf(parent, 1);
+    const content = parent.attr('data-bs-content');
+    assert(content);
+    const inner$ = cheerio.load(content);
+    const csrfTokenInput = inner$('input[name="__csrf_token"]');
+    assert.lengthOf(csrfTokenInput, 1);
+    const csrfToken = csrfTokenInput.val();
+    assert.isString(csrfToken);
+    context.__csrf_token = csrfToken;
+    return csrfToken;
+}
+/**
+ * Utility function that extracts a variant ID from a `__variant_id` input
+ * that is a descendent of the `parentSelector`, if one is specified.
+ * The token will also be persisted to `context.__variant_id`.
+ */
+export function extractAndSaveVariantId(context, $, parentSelector = '') {
+    const variantIdInput = $(`${parentSelector} input[name="__variant_id"]`);
+    assert.lengthOf(variantIdInput, 1);
+    const variantId = variantIdInput.val();
+    assert.isString(variantId);
+    context.__variant_id = variantId;
+    return variantId;
+}
+/**
+ * Set the current user in the config.
+ */
+export function setUser(user) {
+    config.authUid = user.authUid;
+    config.authName = user.authName;
+    config.authUin = user.authUin;
+}
+/**
+ * Get instance question id from URL params.
+ */
+export function parseInstanceQuestionId(url) {
+    const match = url.match(/instance_question\/(\d+)/);
+    assert(match);
+    const iqId = parseInt(match[1]);
+    assert.isNumber(iqId);
+    return iqId;
+}
+/**
+ * Get assessment instance id from URL params.
+ */
+export function parseAssessmentInstanceId(url) {
+    const match = url.match(/assessment_instance\/(\d+)/);
+    assert(match);
+    const iqId = parseInt(match[1]);
+    assert.isNumber(iqId);
+    return iqId;
+}
+/**
+ * Acts as 'save' or 'save and grade' button click on student instance question page.
+ *
+ * @param instanceQuestionUrl The instance question url the student is answering the question on.
+ * @param payload JSON data structure type formed on the basis of the question
+ * @param action The action to take
+ * @param fileData File data to submit to the question
+ */
+export async function saveOrGrade(instanceQuestionUrl, payload, action, fileData = null) {
+    const $instanceQuestionPage = cheerio.load(await (await fetch(instanceQuestionUrl)).text());
+    const token = $instanceQuestionPage('form > input[name="__csrf_token"]').val();
+    const variantId = $instanceQuestionPage('form > input[name="__variant_id"]').val();
+    const fileUploadInputName = $instanceQuestionPage('input[name^=_file_upload]').attr('name');
+    const fileEditorInputName = $instanceQuestionPage('input[name^=_file_editor]').attr('name');
+    assert(typeof token === 'string');
+    assert(typeof variantId === 'string');
+    // handles case where __variant_id should exist inside postData on only some instance questions submissions
+    if (payload && payload.postData) {
+        const postData = JSON.parse(payload.postData);
+        postData.variant.id = variantId;
+        payload.postData = JSON.stringify(postData);
+    }
+    // Hacky: if this question is using `pl-file-editor` and not `pl-file-upload`,
+    // assume a single file and massage `fileData` to match the expected format.
+    const fileDataRaw = {};
+    if (fileData) {
+        if (fileUploadInputName) {
+            fileDataRaw[fileUploadInputName] = JSON.stringify(fileData);
+        }
+        else if (fileEditorInputName) {
+            fileDataRaw[fileEditorInputName] = fileData[0].contents;
+        }
+    }
+    return fetch(instanceQuestionUrl, {
+        method: 'POST',
+        headers: { 'Content-type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+            __variant_id: variantId,
+            __action: action,
+            __csrf_token: token,
+            ...fileDataRaw,
+            ...payload,
+        }).toString(),
+    });
+}
+/**
+ * Asserts that an alert exists with a given text. Normalizes the text of the
+ * alert before comparing with the expected value.
+ */
+export function assertAlert($, text, expectedLength = 1) {
+    const alerts = $('.alert').filter((_, elem) => $(elem).text().trim().replaceAll(/\s+/g, ' ').includes(text));
+    if (alerts.length !== expectedLength) {
+        console.error(`Expected ${expectedLength}:`, text);
+        console.error('Actual:', $('.alert').text());
+    }
+    assert.lengthOf(alerts, expectedLength);
+}
+//# sourceMappingURL=helperClient.js.map

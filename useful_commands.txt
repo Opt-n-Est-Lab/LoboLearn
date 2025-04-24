@@ -1,0 +1,40 @@
+
+# ==============================
+# 🌱 LoboLearn Dev Commands 🌱
+# ==============================
+
+# 🚀 Start the LoboLearn server
+docker compose up
+
+# 🧹 Stop and clean up all containers
+docker compose down
+
+# 🧼 Stop, clean up, and remove volumes (for full reset)
+docker compose down -v
+
+# 🔨 Rebuild the Docker image (use after code/package changes)
+docker compose build --no-cache
+
+# 📦 Install all dependencies across the monorepo
+yarn install
+
+# 🛠 Build all workspace packages (including internal ones like opentelemetry)
+yarn turbo run build
+
+# 📁 Verify if opentelemetry is built
+ls packages/opentelemetry/dist/index.js
+
+# 🧠 Optional: Run LoboLearn migration/dev command (if applicable)
+yarn migrate-dev
+
+# 🧪 Check available workspaces (should show all packages like @prairielearn/opentelemetry)
+yarn workspaces list
+
+# 🧹 Optional: Clean yarn cache (use when debugging weird dependency issues)
+yarn cache clean
+
+# ❓ If something breaks, try this full sequence
+yarn install
+yarn turbo run build
+docker compose build --no-cache
+docker compose up

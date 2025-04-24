@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../packages/browser-utils/src/on-document-ready.ts", "../../../assets/scripts/administratorInstitutionGeneralClient.ts"],
+  "sourcesContent": ["export function onDocumentReady(fn: () => void): void {\n  if (document.readyState === 'interactive' || document.readyState === 'complete') {\n    fn();\n  } else {\n    document.addEventListener('DOMContentLoaded', () => {\n      fn();\n    });\n  }\n}\n", "import { onDocumentReady } from '@prairielearn/browser-utils';\n\nonDocumentReady(() => {\n  document.querySelectorAll('.js-plan').forEach((plan) => {\n    const enabledCheckbox = plan.querySelector<HTMLInputElement>('.js-plan-enabled');\n    const enabledType = plan.querySelector<HTMLSelectElement>('.js-plan-type');\n\n    if (!enabledCheckbox || !enabledType) return;\n\n    enabledCheckbox.addEventListener('change', () => {\n      enabledType.disabled = !enabledCheckbox.checked;\n    });\n  });\n});\n"],
+  "mappings": "mBAAM,SAAUA,EAAgBC,EAAc,CACxC,SAAS,aAAe,eAAiB,SAAS,aAAe,WACnEA,EAAE,EAEF,SAAS,iBAAiB,mBAAoB,IAAK,CACjDA,EAAE,CACJ,CAAC,CAEL,CCNAC,EAAgB,IAAM,CACpB,SAAS,iBAAiB,UAAU,EAAE,QAASC,GAAS,CACtD,IAAMC,EAAkBD,EAAK,cAAgC,kBAAkB,EACzEE,EAAcF,EAAK,cAAiC,eAAe,EAErE,CAACC,GAAmB,CAACC,GAEzBD,EAAgB,iBAAiB,SAAU,IAAM,CAC/CC,EAAY,SAAW,CAACD,EAAgB,OAC1C,CAAC,CACH,CAAC,CACH,CAAC",
+  "names": ["onDocumentReady", "fn", "onDocumentReady", "plan", "enabledCheckbox", "enabledType"]
+}

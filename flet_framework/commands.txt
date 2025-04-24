@@ -1,0 +1,11 @@
+1) Run the application:
+        flet run landing_page.py --web
+
+2) Publish as static website:
+        flet publish landing_page.py --assets assets --route-url-strategy hash --no-web-splash
+
+3) Run application from http.server:
+        python -m http.server --directory dist
+
+4) View application in browser:
+        http://localhost:8000

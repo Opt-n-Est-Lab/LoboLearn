@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,GAAG,CAAI,EAAW;IAChC,OAAO,EAAE,EAAE,CAAC;AACd,CAAC","sourcesContent":["export function run<T>(fn: () => T): T {\n  return fn();\n}\n"]}

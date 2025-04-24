@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021", "DOM"],
+    "noEmit": true,
+    "rootDir": "../../",
+    "outDir": "../../public/build/scripts",
+    "types": ["jquery", "bootstrap", "bootstrap-table"],
+    "strict": true,
+    // Support native ESM, which esbuild supports.
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "include": ["**/*"]
+}
